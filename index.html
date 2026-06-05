@@ -1,0 +1,3819 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Al-HAYAA CREATIVE | Islamic Gifts & Custom Creations</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;0,9..40,600;0,9..40,700;1,9..40,400&family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500;1,600&display=swap" rel="stylesheet">
+    <style>
+        /* ═══════════════════════════════════════════════════════════════
+           CSS RESET & BASE
+           ═══════════════════════════════════════════════════════════════ */
+        *, *::before, *::after {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --purple-main: #622B8F;
+            --purple-dark: #4C2172;
+            --purple-deep: #31125B;
+            --purple-medium: #915BA8;
+            --purple-muted: #734F95;
+            --purple-light: #f3edf7;
+            --purple-lighter: #faf6fc;
+            --cream: #faf8f5;
+            --white: #ffffff;
+            --text: #2d1b4e;
+            --text-light: #7a6b8a;
+            --text-muted: #a89bb5;
+            --gold: #D4AF37;
+            --gold-light: #e8d5a3;
+            --gold-pale: #f5edd0;
+            --border: rgba(98, 43, 143, 0.12);
+            --border-strong: rgba(98, 43, 143, 0.2);
+            --shadow-sm: 0 2px 8px rgba(49, 18, 91, 0.06);
+            --shadow: 0 4px 20px rgba(49, 18, 91, 0.08);
+            --shadow-lg: 0 12px 40px rgba(49, 18, 91, 0.12);
+            --shadow-xl: 0 24px 60px rgba(49, 18, 91, 0.15);
+            --radius-sm: 8px;
+            --radius: 16px;
+            --radius-lg: 24px;
+            --transition: all 0.35s cubic-bezier(0.4, 0, 0.2, 1);
+            --transition-slow: all 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        html {
+            scroll-behavior: smooth;
+            font-size: 16px;
+        }
+
+        body {
+            font-family: 'DM Sans', sans-serif;
+            background: var(--cream);
+            color: var(--text);
+            line-height: 1.6;
+            overflow-x: hidden;
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+        }
+
+        h1, h2, h3, h4, h5, h6 {
+            font-family: 'Playfair Display', serif;
+            font-weight: 600;
+            line-height: 1.15;
+        }
+
+        a {
+            text-decoration: none;
+            color: inherit;
+        }
+
+        img {
+            max-width: 100%;
+            height: auto;
+            display: block;
+        }
+
+        button {
+            border: none;
+            background: none;
+            cursor: pointer;
+            font-family: inherit;
+        }
+
+        ul, ol {
+            list-style: none;
+        }
+
+        /* ═══════════════════════════════════════════════════════════════
+           SCROLLBAR
+           ═══════════════════════════════════════════════════════════════ */
+        ::-webkit-scrollbar {
+            width: 6px;
+        }
+        ::-webkit-scrollbar-track {
+            background: var(--purple-light);
+        }
+        ::-webkit-scrollbar-thumb {
+            background: var(--purple-main);
+            border-radius: 100px;
+        }
+        ::-webkit-scrollbar-thumb:hover {
+            background: var(--purple-deep);
+        }
+
+        /* ═══════════════════════════════════════════════════════════════
+           MARQUEE BAR
+           ═══════════════════════════════════════════════════════════════ */
+        .marquee-bar {
+            background: var(--purple-deep);
+            padding: 10px 0;
+            overflow: hidden;
+            white-space: nowrap;
+            position: relative;
+            z-index: 1001;
+        }
+
+        .marquee-track {
+            display: inline-flex;
+            animation: marquee-scroll 30s linear infinite;
+        }
+
+        .marquee-item {
+            color: var(--gold-light);
+            font-size: 0.7rem;
+            font-weight: 500;
+            letter-spacing: 2.5px;
+            text-transform: uppercase;
+            padding: 0 2.5rem;
+            opacity: 0.85;
+        }
+
+        .marquee-item::before {
+            content: '◆';
+            margin-right: 2.5rem;
+            opacity: 0.5;
+        }
+
+        @keyframes marquee-scroll {
+            0% { transform: translateX(0); }
+            100% { transform: translateX(-50%); }
+        }
+
+        /* ═══════════════════════════════════════════════════════════════
+           NAVIGATION
+           ═══════════════════════════════════════════════════════════════ */
+        .nav {
+            position: fixed;
+            top: 38px;
+            left: 0;
+            right: 0;
+            z-index: 1000;
+            padding: 1rem 0;
+            transition: var(--transition);
+        }
+
+        .nav.scrolled {
+            top: 0;
+            background: rgba(250, 248, 245, 0.95);
+            backdrop-filter: blur(20px) saturate(1.8);
+            -webkit-backdrop-filter: blur(20px) saturate(1.8);
+            border-bottom: 1px solid var(--border);
+            box-shadow: var(--shadow-sm);
+        }
+
+        .nav-inner {
+            max-width: 1280px;
+            margin: 0 auto;
+            padding: 0 2rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.35rem;
+            font-weight: 700;
+            color: var(--purple-deep);
+            letter-spacing: 1px;
+            transition: var(--transition);
+        }
+
+        .logo span {
+            color: var(--purple-main);
+            font-style: italic;
+            font-weight: 500;
+        }
+
+        .nav-links {
+            display: flex;
+            align-items: center;
+            gap: 2.5rem;
+        }
+
+        .nav-link {
+            font-size: 0.82rem;
+            font-weight: 500;
+            color: var(--text);
+            letter-spacing: 0.5px;
+            position: relative;
+            padding: 0.3rem 0;
+            transition: var(--transition);
+        }
+
+        .nav-link::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 0;
+            height: 1.5px;
+            background: var(--purple-main);
+            transition: width 0.35s ease;
+        }
+
+        .nav-link:hover {
+            color: var(--purple-main);
+        }
+
+        .nav-link:hover::after {
+            width: 100%;
+        }
+
+        .nav-cta {
+            padding: 0.7rem 1.6rem;
+            background: var(--purple-deep);
+            color: var(--gold);
+            font-size: 0.78rem;
+            font-weight: 600;
+            letter-spacing: 1.5px;
+            text-transform: uppercase;
+            border-radius: 100px;
+            transition: var(--transition);
+            border: 1.5px solid transparent;
+        }
+
+        .nav-cta:hover {
+            background: transparent;
+            color: var(--purple-deep);
+            border-color: var(--purple-deep);
+        }
+
+        .nav-toggle {
+            display: none;
+            width: 32px;
+            height: 32px;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            gap: 5px;
+            cursor: pointer;
+        }
+
+        .nav-toggle span {
+            display: block;
+            width: 22px;
+            height: 2px;
+            background: var(--purple-deep);
+            border-radius: 2px;
+            transition: var(--transition);
+        }
+
+        /* Make nav links visible on top of the purple hero (landing) */
+        .nav .logo {
+            color: var(--white);
+        }
+
+        .nav.scrolled .logo {
+            color: var(--purple-deep);
+        }
+
+        .nav .nav-link {
+            color: var(--gold);
+        }
+
+        .nav.scrolled .nav-link {
+            color: var(--text);
+        }
+
+        .nav .nav-toggle span {
+            background: var(--white);
+        }
+
+        .nav.scrolled .nav-toggle span {
+            background: var(--purple-deep);
+        }
+
+        .nav-toggle.active span:nth-child(1) {
+            transform: rotate(45deg) translate(5px, 5px);
+        }
+
+        .nav-toggle.active span:nth-child(2) {
+            opacity: 0;
+        }
+
+        .nav-toggle.active span:nth-child(3) {
+            transform: rotate(-45deg) translate(5px, -5px);
+        }
+
+        /* ═══════════════════════════════════════════════════════════════
+           HERO
+           ═══════════════════════════════════════════════════════════════ */
+        .hero {
+            min-height: 100vh;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero-left {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            padding: 8rem 4rem 4rem 5rem;
+            position: relative;
+            background: var(--cream);
+        }
+
+        .hero-label {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.6rem;
+            font-size: 0.72rem;
+            font-weight: 600;
+            letter-spacing: 3px;
+            text-transform: uppercase;
+            color: var(--purple-main);
+            margin-bottom: 2rem;
+        }
+
+        .hero-label::before {
+            content: '';
+            width: 30px;
+            height: 1.5px;
+            background: var(--purple-main);
+        }
+
+        .hero-title {
+            font-size: clamp(2.8rem, 5.5vw, 5rem);
+            color: var(--purple-deep);
+            margin-bottom: 1.5rem;
+            line-height: 1.05;
+        }
+
+        .hero-title em {
+            font-style: italic;
+            color: var(--purple-main);
+            font-weight: 500;
+        }
+
+        .hero-desc {
+            font-size: 1.05rem;
+            color: var(--text-light);
+            max-width: 440px;
+            margin-bottom: 2.5rem;
+            line-height: 1.7;
+            font-weight: 400;
+        }
+
+        .hero-actions {
+            display: flex;
+            align-items: center;
+            gap: 1.5rem;
+            flex-wrap: wrap;
+        }
+
+        .btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            padding: 1rem 2.2rem;
+            font-size: 0.85rem;
+            font-weight: 600;
+            letter-spacing: 1px;
+            border-radius: 100px;
+            transition: var(--transition);
+            cursor: pointer;
+        }
+
+        .btn-primary {
+            background: var(--purple-deep);
+            color: var(--gold);
+            border: 1.5px solid var(--purple-deep);
+        }
+
+        .btn-primary:hover {
+            background: transparent;
+            color: var(--purple-deep);
+            transform: translateY(-2px);
+            box-shadow: var(--shadow-lg);
+        }
+
+        .btn-ghost {
+            background: transparent;
+            color: var(--purple-deep);
+            border: 1.5px solid var(--border-strong);
+        }
+
+        .btn-ghost:hover {
+            border-color: var(--purple-main);
+            color: var(--purple-main);
+            transform: translateY(-2px);
+        }
+
+        .hero-right {
+            position: relative;
+            background: var(--purple-deep);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 3rem;
+        }
+
+        .hero-right::before {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background:
+                radial-gradient(ellipse at 20% 80%, rgba(98, 43, 143, 0.5) 0%, transparent 60%),
+                radial-gradient(ellipse at 80% 20%, rgba(145, 91, 168, 0.4) 0%, transparent 50%);
+        }
+
+        .hero-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 1rem;
+            width: 85%;
+            max-width: 420px;
+            position: relative;
+            z-index: 1;
+        }
+
+        .hero-img {
+            aspect-ratio: 1;
+            background: rgba(255,255,255,0.06);
+            border: 1px solid rgba(212, 175, 55, 0.12);
+            border-radius: var(--radius-sm);
+            overflow: hidden;
+            position: relative;
+        }
+
+        .hero-img img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            opacity: 0.75;
+            transition: var(--transition-slow);
+        }
+
+        .hero-img:hover img {
+            opacity: 1;
+            transform: scale(1.05);
+        }
+
+        .hero-img:nth-child(2) { margin-top: 2rem; }
+        .hero-img:nth-child(3) { margin-top: -2rem; }
+
+        .hero-scroll {
+            position: absolute;
+            bottom: 2.5rem;
+            left: 5rem;
+            display: flex;
+            align-items: center;
+            gap: 0.8rem;
+            color: var(--text-muted);
+            font-size: 0.7rem;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+        }
+
+        .hero-scroll-line {
+            width: 1px;
+            height: 40px;
+            background: var(--border-strong);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero-scroll-line::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 50%;
+            background: var(--purple-main);
+            animation: scroll-line 2s ease-in-out infinite;
+        }
+
+        @keyframes scroll-line {
+            0%, 100% { transform: translateY(-100%); }
+            50% { transform: translateY(200%); }
+        }
+
+        /* ═══════════════════════════════════════════════════════════════
+           SECTION LABELS & HEADERS
+           ═══════════════════════════════════════════════════════════════ */
+        .section-label {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.6rem;
+            font-size: 0.72rem;
+            font-weight: 600;
+            letter-spacing: 3px;
+            text-transform: uppercase;
+            color: var(--purple-main);
+            margin-bottom: 1.2rem;
+        }
+
+        .section-label::before {
+            content: '';
+            width: 24px;
+            height: 1.5px;
+            background: var(--purple-main);
+        }
+
+        .section-title {
+            font-size: clamp(2.2rem, 4.5vw, 3.8rem);
+            color: var(--purple-deep);
+            margin-bottom: 1rem;
+            line-height: 1.1;
+        }
+
+        .section-title em {
+            font-style: italic;
+            color: var(--purple-main);
+            font-weight: 500;
+        }
+
+        .section-desc {
+            font-size: 1.05rem;
+            color: var(--text-light);
+            max-width: 520px;
+            line-height: 1.7;
+        }
+
+        /* ═══════════════════════════════════════════════════════════════
+           SERVICES SECTION
+           ═══════════════════════════════════════════════════════════════ */
+        .services {
+            padding: 7rem 0;
+            background: var(--white);
+        }
+
+        .services-inner {
+            max-width: 1280px;
+            margin: 0 auto;
+            padding: 0 2rem;
+            display: grid;
+            grid-template-columns: 1fr 1.2fr;
+            gap: 5rem;
+            align-items: start;
+        }
+
+        .services-visual {
+            position: sticky;
+            top: 100px;
+        }
+
+        .services-visual-img {
+            width: 100%;
+            aspect-ratio: 4/5;
+            background: var(--purple-light);
+            border-radius: var(--radius);
+            overflow: hidden;
+            position: relative;
+        }
+
+        .services-visual-img img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .services-visual-img::after {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background: linear-gradient(to top, rgba(49, 18, 91, 0.3), transparent 50%);
+        }
+
+        .services-visual-caption {
+            position: absolute;
+            bottom: 2rem;
+            left: 2rem;
+            right: 2rem;
+            z-index: 1;
+        }
+
+        .services-visual-caption h4 {
+            color: var(--white);
+            font-size: 1.4rem;
+            margin-bottom: 0.3rem;
+        }
+
+        .services-visual-caption p {
+            color: rgba(255,255,255,0.7);
+            font-size: 0.85rem;
+        }
+
+        .services-list {
+            padding-top: 2rem;
+        }
+
+        .service-item {
+            padding: 1.4rem 0;
+            border-bottom: 1px solid var(--border);
+            display: flex;
+            align-items: center;
+            gap: 1.2rem;
+            cursor: pointer;
+            transition: var(--transition);
+            position: relative;
+        }
+
+        .service-item::before {
+            content: '';
+            position: absolute;
+            left: -1rem;
+            top: 50%;
+            transform: translateY(-50%);
+            width: 3px;
+            height: 0;
+            background: var(--purple-main);
+            border-radius: 100px;
+            transition: height 0.35s ease;
+        }
+
+        .service-item:hover::before {
+            height: 60%;
+        }
+
+        .service-item:hover {
+            padding-left: 1rem;
+        }
+
+        .service-num {
+            font-size: 0.75rem;
+            font-weight: 700;
+            color: var(--purple-main);
+            opacity: 0.5;
+            width: 28px;
+            flex-shrink: 0;
+        }
+
+        .service-name {
+            font-size: 1.15rem;
+            font-weight: 500;
+            color: var(--purple-deep);
+            flex: 1;
+            transition: var(--transition);
+        }
+
+        .service-item:hover .service-name {
+            color: var(--purple-main);
+        }
+
+        .service-arrow {
+            color: var(--purple-main);
+            opacity: 0;
+            transform: translateX(-10px);
+            transition: var(--transition);
+            font-size: 1.1rem;
+        }
+
+        .service-item:hover .service-arrow {
+            opacity: 1;
+            transform: translateX(0);
+        }
+
+        /* ═══════════════════════════════════════════════════════════════
+           PRODUCTS SECTION
+           ═══════════════════════════════════════════════════════════════ */
+        .products {
+            padding: 7rem 0;
+            background: var(--purple-lighter);
+        }
+
+        .products-inner {
+            max-width: 1280px;
+            margin: 0 auto;
+            padding: 0 2rem;
+        }
+
+        .products-header {
+            text-align: center;
+            margin-bottom: 4rem;
+        }
+
+        .products-header .section-label {
+            justify-content: center;
+        }
+
+        .products-header .section-label::before {
+            display: none;
+        }
+
+        .products-header .section-label::after {
+            content: '';
+            width: 24px;
+            height: 1.5px;
+            background: var(--purple-main);
+            margin-left: 0.6rem;
+        }
+
+        .products-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 1.5rem;
+        }
+
+        .product-card {
+            background: var(--white);
+            border-radius: var(--radius);
+            overflow: hidden;
+            border: 1px solid var(--border);
+            transition: var(--transition-slow);
+            cursor: pointer;
+            position: relative;
+        }
+
+        .product-card:hover {
+            transform: translateY(-8px);
+            box-shadow: var(--shadow-xl);
+            border-color: var(--border-strong);
+        }
+
+        .product-card.tall {
+            grid-row: span 2;
+        }
+
+        .product-img {
+            position: relative;
+            aspect-ratio: 1;
+            background: var(--purple-light);
+            overflow: hidden;
+        }
+
+        .product-card.tall .product-img {
+            aspect-ratio: 3/4;
+        }
+
+        .product-img img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: var(--transition-slow);
+        }
+
+        .product-card:hover .product-img img {
+            transform: scale(1.06);
+        }
+
+        .product-tag {
+            position: absolute;
+            top: 1rem;
+            left: 1rem;
+            background: var(--purple-deep);
+            color: var(--gold);
+            padding: 0.35rem 0.9rem;
+            border-radius: 100px;
+            font-size: 0.7rem;
+            font-weight: 600;
+            letter-spacing: 0.5px;
+            text-transform: uppercase;
+            z-index: 2;
+        }
+
+        .product-overlay {
+            position: absolute;
+            inset: 0;
+            background: linear-gradient(to top, rgba(49, 18, 91, 0.85) 0%, rgba(49, 18, 91, 0.2) 50%, transparent 100%);
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-end;
+            padding: 1.8rem;
+            opacity: 0;
+            transition: opacity 0.4s ease;
+        }
+
+        .product-card:hover .product-overlay {
+            opacity: 1;
+        }
+
+        .product-overlay h4 {
+            color: var(--gold);
+            font-size: 1.3rem;
+            margin-bottom: 0.4rem;
+            transform: translateY(10px);
+            transition: transform 0.4s ease 0.05s;
+        }
+
+        .product-overlay p {
+            color: rgba(255,255,255,0.75);
+            font-size: 0.85rem;
+            margin-bottom: 1rem;
+            transform: translateY(10px);
+            transition: transform 0.4s ease 0.1s;
+        }
+
+        .product-card:hover .product-overlay h4,
+        .product-card:hover .product-overlay p {
+            transform: translateY(0);
+        }
+
+        .product-overlay .order-link {
+            color: var(--gold);
+            font-size: 0.75rem;
+            font-weight: 600;
+            letter-spacing: 1.5px;
+            text-transform: uppercase;
+            border-bottom: 1px solid var(--gold);
+            padding-bottom: 2px;
+            display: inline-block;
+            width: fit-content;
+            transform: translateY(10px);
+            transition: transform 0.4s ease 0.15s;
+        }
+
+        .product-card:hover .product-overlay .order-link {
+            transform: translateY(0);
+        }
+
+        .product-info {
+            padding: 1.4rem 1.5rem 1.6rem;
+        }
+
+        .product-info h4 {
+            font-size: 1.15rem;
+            color: var(--purple-deep);
+            margin-bottom: 0.4rem;
+        }
+
+        .product-info p {
+            font-size: 0.88rem;
+            color: var(--text-light);
+            line-height: 1.6;
+            margin-bottom: 1rem;
+        }
+
+        .product-bottom {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .product-price {
+            font-size: 0.95rem;
+            font-weight: 600;
+            color: var(--purple-main);
+        }
+
+        .product-whatsapp {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.3rem;
+            padding: 0.5rem 1rem;
+            background: #25D366;
+            color: white;
+            font-size: 0.78rem;
+            font-weight: 600;
+            border-radius: 100px;
+            transition: var(--transition);
+        }
+
+        .product-whatsapp:hover {
+            background: #128C7E;
+            transform: scale(1.05);
+        }
+
+        /* ═══════════════════════════════════════════════════════════════
+           OCCASIONS SECTION
+           ═══════════════════════════════════════════════════════════════ */
+        .occasions {
+            padding: 7rem 0;
+            background: var(--purple-deep);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .occasions::before {
+            content: '';
+            position: absolute;
+            top: -30%;
+            right: -20%;
+            width: 600px;
+            height: 600px;
+            background: radial-gradient(circle, rgba(98, 43, 143, 0.4) 0%, transparent 60%);
+        }
+
+        .occasions::after {
+            content: '';
+            position: absolute;
+            bottom: -20%;
+            left: -10%;
+            width: 400px;
+            height: 400px;
+            background: radial-gradient(circle, rgba(145, 91, 168, 0.2) 0%, transparent 60%);
+        }
+
+        .occasions-inner {
+            max-width: 1280px;
+            margin: 0 auto;
+            padding: 0 2rem;
+            position: relative;
+            z-index: 1;
+        }
+
+        .occasions-header {
+            text-align: center;
+            margin-bottom: 4rem;
+        }
+
+        .occasions-header .section-label {
+            color: var(--gold);
+            justify-content: center;
+        }
+
+        .occasions-header .section-label::before {
+            background: var(--gold);
+        }
+
+        .occasions-header .section-label::after {
+            content: '';
+            width: 24px;
+            height: 1.5px;
+            background: var(--gold);
+            margin-left: 0.6rem;
+        }
+
+        .occasions-header .section-title {
+            color: var(--white);
+        }
+
+        .occasions-header .section-title em {
+            color: var(--gold);
+        }
+
+        .occasions-header .section-desc {
+            color: rgba(255,255,255,0.6);
+            margin: 0 auto;
+        }
+
+        .occasions-scroll {
+            display: flex;
+            gap: 1.5rem;
+            overflow-x: auto;
+            padding: 1rem 0.5rem 2rem;
+            scroll-snap-type: x mandatory;
+            scrollbar-width: none;
+        }
+
+        .occasions-scroll::-webkit-scrollbar {
+            display: none;
+        }
+
+        .occasion-card {
+            flex: 0 0 300px;
+            scroll-snap-align: start;
+            background: rgba(255,255,255,0.04);
+            border: 1px solid rgba(212, 175, 55, 0.1);
+            border-radius: var(--radius);
+            padding: 2.5rem 2rem;
+            text-align: center;
+            transition: var(--transition);
+            cursor: pointer;
+        }
+
+        .occasion-card:hover {
+            background: rgba(255,255,255,0.07);
+            border-color: rgba(212, 175, 55, 0.25);
+            transform: translateY(-6px);
+            box-shadow: 0 20px 50px rgba(0,0,0,0.2);
+        }
+
+        .occasion-icon {
+            width: 70px;
+            height: 70px;
+            background: rgba(212, 175, 55, 0.1);
+            border: 1px solid rgba(212, 175, 55, 0.2);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 1.5rem;
+            font-size: 1.8rem;
+            transition: var(--transition);
+        }
+
+        .occasion-card:hover .occasion-icon {
+            background: rgba(212, 175, 55, 0.2);
+            transform: scale(1.1);
+        }
+
+        .occasion-card h3 {
+            color: var(--gold);
+            font-size: 1.4rem;
+            margin-bottom: 0.8rem;
+        }
+
+        .occasion-card p {
+            color: rgba(255,255,255,0.6);
+            font-size: 0.9rem;
+            line-height: 1.7;
+        }
+
+        /* ═══════════════════════════════════════════════════════════════
+           WHY US SECTION
+           ═══════════════════════════════════════════════════════════════ */
+        .why {
+            padding: 7rem 0;
+            background: var(--white);
+        }
+
+        .why-inner {
+            max-width: 1000px;
+            margin: 0 auto;
+            padding: 0 2rem;
+        }
+
+        .why-header {
+            text-align: center;
+            margin-bottom: 4rem;
+        }
+
+        .why-header .section-label {
+            justify-content: center;
+        }
+
+        .why-header .section-label::before {
+            display: none;
+        }
+
+        .why-header .section-label::after {
+            content: '';
+            width: 24px;
+            height: 1.5px;
+            background: var(--purple-main);
+            margin-left: 0.6rem;
+        }
+
+        .why-cards {
+            display: flex;
+            flex-direction: column;
+            gap: 1rem;
+        }
+
+        .why-card {
+            background: var(--cream);
+            border: 1px solid var(--border);
+            border-radius: var(--radius);
+            padding: 2rem 2.5rem;
+            display: grid;
+            grid-template-columns: 70px 1fr;
+            gap: 1.5rem;
+            align-items: center;
+            transition: var(--transition);
+            cursor: default;
+        }
+
+        .why-card:hover {
+            border-color: var(--border-strong);
+            box-shadow: var(--shadow);
+            transform: translateX(6px);
+        }
+
+        .why-num {
+            font-family: 'Playfair Display', serif;
+            font-size: 2.5rem;
+            color: var(--purple-main);
+            opacity: 0.25;
+            line-height: 1;
+            font-weight: 600;
+        }
+
+        .why-card h4 {
+            font-size: 1.25rem;
+            color: var(--purple-deep);
+            margin-bottom: 0.4rem;
+        }
+
+        .why-card p {
+            color: var(--text-light);
+            font-size: 0.95rem;
+            line-height: 1.7;
+        }
+
+        /* ═══════════════════════════════════════════════════════════════
+           CONTACT SECTION
+           ═══════════════════════════════════════════════════════════════ */
+        .contact {
+            padding: 7rem 0;
+            background: var(--purple-deep);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .contact::before {
+            content: '';
+            position: absolute;
+            top: -40%;
+            left: -20%;
+            width: 600px;
+            height: 600px;
+            background: radial-gradient(circle, rgba(98, 43, 143, 0.4) 0%, transparent 60%);
+        }
+
+        .contact-inner {
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 0 2rem;
+            text-align: center;
+            position: relative;
+            z-index: 1;
+        }
+
+        .contact-inner .section-label {
+            color: var(--gold);
+            justify-content: center;
+        }
+
+        .contact-inner .section-label::before {
+            background: var(--gold);
+        }
+
+        .contact-inner .section-label::after {
+            content: '';
+            width: 24px;
+            height: 1.5px;
+            background: var(--gold);
+            margin-left: 0.6rem;
+        }
+
+        .contact-inner .section-title {
+            color: var(--white);
+        }
+
+        .contact-inner .section-title em {
+            color: var(--gold);
+        }
+
+        .contact-inner .section-desc {
+            color: rgba(255,255,255,0.6);
+            margin: 0 auto 3rem;
+        }
+
+        .contact-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 1.5rem;
+            margin-bottom: 3rem;
+        }
+
+        .contact-card {
+            background: rgba(255,255,255,0.04);
+            border: 1px solid rgba(212, 175, 55, 0.1);
+            border-radius: var(--radius);
+            padding: 2rem 1.5rem;
+            transition: var(--transition);
+        }
+
+        .contact-card:hover {
+            background: rgba(255,255,255,0.07);
+            border-color: rgba(212, 175, 55, 0.2);
+            transform: translateY(-4px);
+        }
+
+        .contact-icon {
+            width: 56px;
+            height: 56px;
+            background: rgba(212, 175, 55, 0.1);
+            border: 1px solid rgba(212, 175, 55, 0.2);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 1.2rem;
+            font-size: 1.4rem;
+        }
+
+        .contact-card strong {
+            display: block;
+            color: var(--gold);
+            font-size: 0.72rem;
+            font-weight: 600;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            margin-bottom: 0.5rem;
+        }
+
+        .contact-card span {
+            color: rgba(255,255,255,0.8);
+            font-size: 0.95rem;
+        }
+
+        .contact-cta .btn-primary {
+            background: var(--gold);
+            color: var(--purple-deep);
+            border-color: var(--gold);
+            padding: 1.1rem 2.5rem;
+            font-size: 0.9rem;
+        }
+
+        .contact-cta .btn-primary:hover {
+            background: transparent;
+            color: var(--gold);
+        }
+
+        /* ═══════════════════════════════════════════════════════════════
+           FOOTER
+           ═══════════════════════════════════════════════════════════════ */
+        .footer {
+            background: var(--purple-deep);
+            border-top: 1px solid rgba(212, 175, 55, 0.08);
+            padding: 3rem 2rem;
+            text-align: center;
+        }
+
+        .footer-brand {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.5rem;
+            color: var(--gold);
+            letter-spacing: 1px;
+            margin-bottom: 0.5rem;
+        }
+
+        .footer p {
+            color: rgba(255,255,255,0.4);
+            font-size: 0.88rem;
+        }
+
+        .footer-copy {
+            margin-top: 1.5rem;
+            padding-top: 1.5rem;
+            border-top: 1px solid rgba(255,255,255,0.06);
+            font-size: 0.78rem;
+            color: rgba(255,255,255,0.3);
+        }
+
+        /* ═══════════════════════════════════════════════════════════════
+           ANIMATIONS
+           ═══════════════════════════════════════════════════════════════ */
+        .reveal {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: opacity 0.8s ease, transform 0.8s ease;
+        }
+
+        .reveal.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .reveal-delay-1 { transition-delay: 0.1s; }
+        .reveal-delay-2 { transition-delay: 0.2s; }
+        .reveal-delay-3 { transition-delay: 0.3s; }
+        .reveal-delay-4 { transition-delay: 0.4s; }
+
+        /* ═══════════════════════════════════════════════════════════════
+           RESPONSIVE — TABLET
+           ═══════════════════════════════════════════════════════════════ */
+        @media (max-width: 1024px) {
+            .hero {
+                grid-template-columns: 1fr;
+            }
+
+            .hero-left {
+                padding: 7rem 3rem 3rem;
+                text-align: center;
+                align-items: center;
+            }
+
+            .hero-desc {
+                margin-left: auto;
+                margin-right: auto;
+            }
+
+            .hero-actions {
+                justify-content: center;
+            }
+
+            .hero-right {
+                min-height: 50vh;
+                padding: 2rem;
+            }
+
+            .hero-grid {
+                width: 70%;
+                max-width: 350px;
+            }
+
+            .hero-scroll {
+                display: none;
+            }
+
+            .services-inner {
+                grid-template-columns: 1fr;
+                gap: 3rem;
+            }
+
+            .services-visual {
+                position: relative;
+                top: auto;
+                max-width: 500px;
+                margin: 0 auto;
+            }
+
+            .products-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .product-card.tall {
+                grid-row: span 1;
+            }
+
+            .product-card.tall .product-img {
+                aspect-ratio: 1;
+            }
+
+            .contact-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+
+        /* ═══════════════════════════════════════════════════════════════
+           RESPONSIVE — MOBILE
+           ═══════════════════════════════════════════════════════════════ */
+        @media (max-width: 768px) {
+            html {
+                font-size: 15px;
+            }
+
+            .nav {
+                top: 36px;
+            }
+
+            .nav-inner {
+                padding: 0 1.25rem;
+            }
+
+            .nav-links {
+                display: none;
+                position: fixed;
+                top: 70px;
+                left: 0;
+                right: 0;
+                background: rgba(250, 248, 245, 0.98);
+                backdrop-filter: blur(20px);
+                flex-direction: column;
+                padding: 2rem;
+                gap: 1.5rem;
+                border-bottom: 1px solid var(--border);
+                box-shadow: var(--shadow-lg);
+            }
+
+            .nav-links.active {
+                display: flex;
+            }
+
+            .nav-cta {
+                display: none;
+            }
+
+            .nav-toggle {
+                display: flex;
+            }
+
+            .hero-left {
+                padding: 6rem 1.5rem 2.5rem;
+            }
+
+            .hero-title {
+                font-size: clamp(2.2rem, 8vw, 3.5rem);
+            }
+
+            .hero-actions {
+                flex-direction: column;
+                width: 100%;
+            }
+
+            .btn {
+                width: 100%;
+                justify-content: center;
+            }
+
+            .hero-right {
+                min-height: 40vh;
+                padding: 1.5rem;
+            }
+
+            .hero-grid {
+                width: 85%;
+                gap: 0.75rem;
+            }
+
+            .hero-img:nth-child(2) { margin-top: 1rem; }
+            .hero-img:nth-child(3) { margin-top: -1rem; }
+
+            .services-inner {
+                padding: 0 1.25rem;
+            }
+
+            .service-item {
+                padding: 1.1rem 0;
+            }
+
+            .service-name {
+                font-size: 1rem;
+            }
+
+            .products-inner {
+                padding: 0 1.25rem;
+            }
+
+            .products-grid {
+                grid-template-columns: 1fr;
+                gap: 1.25rem;
+            }
+
+            .product-card.tall .product-img {
+                aspect-ratio: 4/3;
+            }
+
+            .occasions-inner {
+                padding: 0 1.25rem;
+            }
+
+            .occasion-card {
+                flex: 0 0 280px;
+                padding: 2rem 1.5rem;
+            }
+
+            .why-inner {
+                padding: 0 1.25rem;
+            }
+
+            .why-card {
+                grid-template-columns: 1fr;
+                text-align: center;
+                padding: 1.8rem;
+            }
+
+            .why-num {
+                font-size: 3rem;
+                margin-bottom: 0.5rem;
+            }
+
+            .contact-inner {
+                padding: 0 1.25rem;
+            }
+
+            .contact-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .footer {
+                padding: 2.5rem 1.25rem;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .hero-title {
+                font-size: 2.2rem;
+            }
+
+            .section-title {
+                font-size: 2rem;
+            }
+
+            .hero-grid {
+                grid-template-columns: 1fr 1fr;
+            }
+        }
+
+
+        /* ═══════════════════════════════════════════════════════════════
+   HAYA — The Al-HAYAA AI Concierge
+   A sophisticated behavioral intelligence layer
+   ═══════════════════════════════════════════════════════════════ */
+
+.haya-root {
+    --haya-purple: #622B8F;
+    --haya-purple-dark: #4C2172;
+    --haya-purple-deep: #31125B;
+    --haya-purple-light: rgba(98, 43, 143, 0.08);
+    --haya-gold: #D4AF37;
+    --haya-gold-light: rgba(212, 175, 55, 0.15);
+    --haya-glow: 0 0 30px rgba(98, 43, 143, 0.15);
+    --haya-transition: all 0.4s cubic-bezier(0.34, 1.56, 0.64, 1);
+}
+
+/* ── HAYA Presence Indicator ── */
+.haya-presence {
+    position: fixed;
+    bottom: 28px;
+    right: 28px;
+    z-index: 9998;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    cursor: pointer;
+    transition: var(--haya-transition);
+    opacity: 0;
+    transform: translateY(20px);
+    pointer-events: none;
+    background: rgba(255, 255, 255, 0.16);
+    padding: 10px 14px;
+    border-radius: 999px;
+    border: 1px solid rgba(212, 175, 55, 0.25);
+    box-shadow: 0 18px 45px rgba(49, 18, 91, 0.22);
+}
+
+.haya-presence-text {
+    display: none !important;
+}
+
+.haya-presence.visible {
+    opacity: 1;
+    transform: translateY(0);
+    pointer-events: all;
+}
+
+.haya-presence:hover {
+    transform: translateY(-4px);
+}
+
+.haya-avatar-ring {
+    width: 56px;
+    height: 56px;
+    border-radius: 50%;
+    background: #D4AF37;
+    border: 2px solid #31125B;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    box-shadow: 0 10px 30px rgba(98, 43, 143, 0.35);
+    transition: var(--haya-transition);
+}
+
+.haya-avatar-ring::before {
+    content: '';
+    position: absolute;
+    inset: -6px;
+    border-radius: 50%;
+    border: 1.5px solid var(--haya-gold);
+    opacity: 0;
+    animation: hayaPulse 3s ease-in-out infinite;
+}
+
+@keyframes hayaPulse {
+    0%, 100% { opacity: 0; transform: scale(1); }
+    50% { opacity: 0.4; transform: scale(1.1); }
+}
+
+.haya-avatar-ring .moon {
+    font-size: 22px;
+    color: #ffffff;
+    filter: drop-shadow(0 0 10px rgba(0, 0, 0, 0.35));
+}
+
+.haya-status-dot {
+    position: absolute;
+    bottom: 3px;
+    right: 3px;
+    width: 12px;
+    height: 12px;
+    background: #48bb78;
+    border-radius: 50%;
+    border: 2px solid #fff;
+    animation: hayaBlink 2.5s ease-in-out infinite;
+}
+
+@keyframes hayaBlink {
+    0%, 100% { opacity: 1; }
+    50% { opacity: 0.4; }
+}
+
+.haya-presence-text {
+    background: var(--haya-purple-deep);
+    color: var(--haya-gold);
+    padding: 10px 18px;
+    border-radius: 20px;
+    font-size: 0.82rem;
+    font-weight: 500;
+    letter-spacing: 0.3px;
+    box-shadow: 0 4px 20px rgba(49, 18, 91, 0.2);
+    white-space: nowrap;
+    opacity: 0;
+    transform: translateX(-10px);
+    transition: var(--haya-transition);
+}
+
+.haya-presence:hover .haya-presence-text,
+.haya-presence.show-text .haya-presence-text {
+    opacity: 1;
+    transform: translateX(0);
+}
+
+/* ── HAYA Toast Messages ── */
+.haya-toast-container {
+    position: fixed;
+    bottom: 100px;
+    right: 28px;
+    z-index: 9997;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    max-width: 340px;
+    pointer-events: none;
+}
+
+.haya-toast {
+    background: var(--haya-purple-deep);
+    border: 1px solid rgba(212, 175, 55, 0.15);
+    border-radius: 16px;
+    padding: 16px 20px;
+    color: #fff;
+    font-size: 0.9rem;
+    line-height: 1.6;
+    box-shadow: 0 12px 40px rgba(49, 18, 91, 0.25);
+    transform: translateX(120%);
+    opacity: 0;
+    transition: all 0.5s cubic-bezier(0.34, 1.56, 0.64, 1);
+    pointer-events: all;
+    cursor: pointer;
+    position: relative;
+    overflow: hidden;
+}
+
+.haya-toast::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 3px;
+    height: 100%;
+    background: var(--haya-gold);
+}
+
+.haya-toast.show {
+    transform: translateX(0);
+    opacity: 1;
+}
+
+.haya-toast.exit {
+    transform: translateX(120%);
+    opacity: 0;
+}
+
+.haya-toast-header {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    margin-bottom: 6px;
+}
+
+.haya-toast-header .moon {
+    font-size: 14px;
+}
+
+.haya-toast-header span {
+    font-size: 0.75rem;
+    color: var(--haya-gold);
+    font-weight: 600;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+}
+
+.haya-toast-close {
+    position: absolute;
+    top: 10px;
+    right: 12px;
+    background: none;
+    border: none;
+    color: rgba(255,255,255,0.4);
+    font-size: 16px;
+    cursor: pointer;
+    padding: 4px;
+    line-height: 1;
+    transition: color 0.3s;
+}
+
+.haya-toast-close:hover {
+    color: #fff;
+}
+
+.haya-toast-actions {
+    display: flex;
+    gap: 8px;
+    margin-top: 12px;
+}
+
+.haya-toast-btn {
+    padding: 8px 16px;
+    border-radius: 100px;
+    font-size: 0.78rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: var(--haya-transition);
+    border: none;
+}
+
+.haya-toast-btn.primary {
+    background: var(--haya-gold);
+    color: var(--haya-purple-deep);
+}
+
+.haya-toast-btn.primary:hover {
+    background: #c4a030;
+    transform: scale(1.05);
+}
+
+.haya-toast-btn.ghost {
+    background: rgba(255,255,255,0.08);
+    color: rgba(255,255,255,0.7);
+    border: 1px solid rgba(255,255,255,0.15);
+}
+
+.haya-toast-btn.ghost:hover {
+    background: rgba(255,255,255,0.15);
+    color: #fff;
+}
+
+/* ── HAYA Inline Suggestions ── */
+.haya-inline-suggest {
+    position: absolute;
+    background: var(--haya-purple-deep);
+    color: var(--haya-gold);
+    padding: 10px 16px;
+    border-radius: 12px;
+    font-size: 0.82rem;
+    font-weight: 500;
+    box-shadow: 0 8px 30px rgba(49, 18, 91, 0.2);
+    z-index: 100;
+    opacity: 0;
+    transform: translateY(10px);
+    transition: all 0.4s ease;
+    pointer-events: none;
+    max-width: 260px;
+    line-height: 1.5;
+}
+
+.haya-inline-suggest.show {
+    opacity: 1;
+    transform: translateY(0);
+    pointer-events: all;
+}
+
+.haya-inline-suggest::after {
+    content: '';
+    position: absolute;
+    bottom: -6px;
+    left: 20px;
+    width: 12px;
+    height: 12px;
+    background: var(--haya-purple-deep);
+    transform: rotate(45deg);
+}
+
+/* ── HAYA Product Highlight ── */
+.haya-highlight {
+    position: relative;
+}
+
+.haya-highlight::after {
+    content: '';
+    position: absolute;
+    inset: -4px;
+    border-radius: inherit;
+    border: 2px solid var(--haya-gold);
+    opacity: 0;
+    transition: opacity 0.4s;
+    pointer-events: none;
+    animation: hayaGlow 2s ease-in-out infinite;
+}
+
+.haya-highlight.active::after {
+    opacity: 1;
+}
+
+@keyframes hayaGlow {
+    0%, 100% { box-shadow: 0 0 20px rgba(212, 175, 55, 0.2); }
+    50% { box-shadow: 0 0 40px rgba(212, 175, 55, 0.4); }
+}
+
+/* ── HAYA Full Overlay ── */
+.haya-overlay {
+    position: fixed;
+    inset: 0;
+    z-index: 10000;
+    background: rgba(8, 4, 25, 1);
+    backdrop-filter: blur(18px);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.4s ease;
+}
+
+.haya-overlay.open {
+    opacity: 1;
+    pointer-events: all;
+}
+
+.haya-overlay-inner {
+    width: 100%;
+    max-width: 600px;
+    height: 100%;
+    max-height: 700px;
+    display: flex;
+    flex-direction: column;
+    padding: 2rem;
+    position: relative;
+    background: #0d0828;
+    border-radius: 24px;
+    box-shadow: 0 24px 80px rgba(0, 0, 0, 0.45);
+    border: 1px solid rgba(212, 175, 55, 0.25);
+}
+
+.haya-overlay-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding-bottom: 1.5rem;
+    border-bottom: 1px solid rgba(212, 175, 55, 0.15);
+    margin-bottom: 1.5rem;
+}
+
+.haya-overlay-brand {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.haya-overlay-brand .moon {
+    font-size: 28px;
+}
+
+.haya-overlay-brand h3 {
+    color: var(--haya-gold);
+    font-family: 'Playfair Display', serif;
+    font-size: 1.4rem;
+    font-weight: 600;
+}
+
+.haya-overlay-brand span {
+    color: rgba(255,255,255,0.5);
+    font-size: 0.75rem;
+    letter-spacing: 1px;
+}
+
+.haya-overlay-close {
+    width: 44px;
+    height: 44px;
+    border-radius: 50%;
+    background: rgba(255,255,255,0.18);
+    border: 1px solid rgba(255,255,255,0.18);
+    color: #ffffff;
+    font-size: 1.2rem;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: var(--haya-transition);
+}
+
+.haya-overlay-close:hover {
+    background: rgba(255,255,255,0.12);
+    color: #fff;
+    transform: rotate(90deg);
+}
+
+.haya-messages {
+    flex: 1;
+    overflow-y: auto;
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    padding-right: 8px;
+    scroll-behavior: smooth;
+}
+
+.haya-messages::-webkit-scrollbar {
+    width: 4px;
+}
+
+.haya-messages::-webkit-scrollbar-thumb {
+    background: var(--haya-gold);
+    border-radius: 100px;
+}
+
+.haya-msg {
+    max-width: 92%;
+    min-width: 140px;
+    width: fit-content;
+    padding: 14px 18px;
+    border-radius: 18px;
+    font-size: 0.92rem;
+    line-height: 1.6;
+    word-wrap: break-word;
+    white-space: pre-wrap;
+    animation: hayaMsgIn 0.4s cubic-bezier(0.34, 1.56, 0.64, 1);
+    color: #ffffff;
+}
+
+@keyframes hayaMsgIn {
+    from { opacity: 0; transform: translateY(12px) scale(0.96); }
+    to { opacity: 1; transform: translateY(0) scale(1); }
+}
+
+.haya-msg.haya {
+    align-self: flex-start;
+    background: #1d1542;
+    color: #ffffff;
+    border: 1px solid rgba(255, 255, 255, 0.14);
+    border-bottom-left-radius: 4px;
+    box-shadow: 0 10px 32px rgba(0, 0, 0, 0.25);
+}
+
+.haya-msg.user {
+    align-self: flex-end;
+    background: #d4af37;
+    color: #1f1337;
+    border-bottom-right-radius: 4px;
+    border: 1px solid rgba(212, 175, 55, 0.7);
+}
+
+.haya-msg strong {
+    color: var(--haya-gold);
+    font-weight: 600;
+}
+
+.haya-typing {
+    display: flex;
+    gap: 5px;
+    padding: 14px 18px;
+    align-self: flex-start;
+    background: rgba(212, 175, 55, 0.08);
+    border-radius: 18px;
+    border: 1px solid rgba(212, 175, 55, 0.1);
+    border-bottom-left-radius: 4px;
+}
+
+.haya-typing span {
+    width: 8px;
+    height: 8px;
+    background: var(--haya-gold);
+    border-radius: 50%;
+    animation: hayaTyping 1.4s infinite ease-in-out both;
+}
+
+.haya-typing span:nth-child(1) { animation-delay: -0.32s; }
+.haya-typing span:nth-child(2) { animation-delay: -0.16s; }
+
+@keyframes hayaTyping {
+    0%, 80%, 100% { transform: scale(0.6); opacity: 0.4; }
+    40% { transform: scale(1); opacity: 1; }
+}
+
+.haya-chips {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin-top: 12px;
+}
+
+.haya-chip {
+    padding: 8px 16px;
+    background: rgba(212, 175, 55, 0.1);
+    border: 1px solid rgba(212, 175, 55, 0.2);
+    border-radius: 100px;
+    font-size: 0.82rem;
+    color: var(--haya-gold);
+    cursor: pointer;
+    transition: var(--haya-transition);
+    font-weight: 500;
+}
+
+.haya-chip:hover {
+    background: var(--haya-gold);
+    color: var(--haya-purple-deep);
+    border-color: var(--haya-gold);
+    transform: translateY(-2px);
+}
+
+.haya-input-area {
+    padding-top: 1.5rem;
+    border-top: 1px solid rgba(212, 175, 55, 0.15);
+    display: flex;
+    gap: 12px;
+    align-items: center;
+}
+
+.haya-input {
+    flex: 1;
+    padding: 14px 20px;
+    border: 1.5px solid rgba(212, 175, 55, 0.2);
+    border-radius: 100px;
+    background: #120a2b;
+    color: #ffffff;
+    font-size: 0.92rem;
+    outline: none;
+    transition: var(--haya-transition);
+    font-family: 'DM Sans', sans-serif;
+}
+
+.haya-input::placeholder {
+    color: rgba(255,255,255,0.35);
+}
+
+.haya-input:focus {
+    border-color: var(--haya-gold);
+    box-shadow: 0 0 0 4px rgba(212, 175, 55, 0.1);
+}
+
+.haya-send {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    background: var(--haya-gold);
+    border: none;
+    color: var(--haya-purple-deep);
+    font-size: 1.1rem;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: var(--haya-transition);
+    flex-shrink: 0;
+}
+
+.haya-send:hover {
+    background: #c4a030;
+    transform: scale(1.1);
+}
+
+.haya-send:disabled {
+    opacity: 0.4;
+    cursor: not-allowed;
+    transform: none;
+}
+
+/* ── HAYA Product Recommendation Card ── */
+.haya-product-card {
+    display: flex;
+    gap: 12px;
+    background: rgba(255,255,255,0.05);
+    border: 1px solid rgba(212, 175, 55, 0.15);
+    border-radius: 12px;
+    padding: 12px;
+    margin-top: 10px;
+    cursor: pointer;
+    transition: var(--haya-transition);
+}
+
+.haya-product-card:hover {
+    background: rgba(255,255,255,0.08);
+    border-color: rgba(212, 175, 55, 0.3);
+    transform: translateX(4px);
+}
+
+.haya-product-card img {
+    width: 60px;
+    height: 60px;
+    border-radius: 8px;
+    object-fit: cover;
+    background: var(--haya-purple-light);
+}
+
+.haya-product-card .info {
+    flex: 1;
+}
+
+.haya-product-card .info h5 {
+    color: var(--haya-gold);
+    font-size: 0.9rem;
+    margin-bottom: 2px;
+}
+
+.haya-product-card .info p {
+    color: rgba(255,255,255,0.6);
+    font-size: 0.78rem;
+}
+
+/* ── HAYA WhatsApp Handoff ── */
+.haya-handoff {
+    background: rgba(37, 211, 102, 0.1);
+    border: 1px solid rgba(37, 211, 102, 0.2);
+    border-radius: 16px;
+    padding: 16px;
+    margin-top: 12px;
+}
+
+.haya-handoff p {
+    color: rgba(255,255,255,0.8);
+    font-size: 0.85rem;
+    margin-bottom: 12px;
+    line-height: 1.6;
+}
+
+.haya-handoff .wa-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    padding: 10px 20px;
+    background: #25D366;
+    color: #fff;
+    border-radius: 100px;
+    font-size: 0.85rem;
+    font-weight: 600;
+    text-decoration: none;
+    transition: var(--haya-transition);
+}
+
+.haya-handoff .wa-btn:hover {
+    background: #128C7E;
+    transform: scale(1.05);
+}
+
+/* ── Mobile ── */
+@media (max-width: 768px) {
+    .haya-presence {
+        bottom: 20px;
+        right: 20px;
+    }
+
+    .haya-presence-text {
+        display: none;
+    }
+
+    .haya-toast-container {
+        bottom: 90px;
+        right: 20px;
+        left: 20px;
+        max-width: none;
+    }
+
+    .haya-toast {
+        max-width: 100%;
+    }
+
+    .haya-overlay-inner {
+        padding: 1.5rem;
+        max-height: 100vh;
+    }
+
+    .haya-overlay-header h3 {
+        font-size: 1.2rem;
+    }
+
+    .haya-msg {
+        max-width: 92%;
+        font-size: 0.88rem;
+    }
+}
+
+/* FINAL HAYA FIXES */
+.haya-overlay {
+    background: rgb(8, 4, 25) !important;
+    backdrop-filter: blur(18px) !important;
+}
+
+.haya-overlay-inner {
+    background: #0d0828 !important;
+    border: 1px solid rgba(212, 175, 55, 0.3) !important;
+}
+
+.haya-msg.haya {
+    background: #1d1542 !important;
+    color: #ffffff !important;
+    border: 1px solid rgba(255, 255, 255, 0.18) !important;
+}
+
+.haya-msg.user {
+    background: #d4af37 !important;
+    color: #1f1337 !important;
+    border: 1px solid rgba(212, 175, 55, 0.7) !important;
+}
+
+.haya-presence {
+
+    border: 1px solid #d4af37 !important;
+    box-shadow: 0 16px 40px rgba(0, 0, 0, 0.35) !important;
+}
+
+.haya-avatar-ring {
+    background: #0b0612 !important;
+    border: 2px solid #d4af37 !important;
+}
+
+.haya-avatar-ring .moon {
+    color: #ffffff !important;
+}
+
+.haya-presence-text {
+    display: none !important;
+}
+
+.haya-toast {
+    background: #31125B !important;
+    border: 1px solid rgba(212, 175, 55, 0.35) !important;
+    color: #ffffff !important;
+    box-shadow: 0 14px 40px rgba(0, 0, 0, 0.35) !important;
+}
+
+.haya-toast.show {
+    opacity: 1 !important;
+    transform: translateX(0) !important;
+}
+
+.haya-toast-btn {
+    border: 1px solid rgba(255,255,255,0.12) !important;
+}
+
+.haya-toast-btn.ghost {
+    background: rgba(255,255,255,0.10) !important;
+    color: rgba(255,255,255,0.95) !important;
+}
+
+.haya-toast-close {
+    color: #ffffff !important;
+}
+
+    </style>
+</head>
+<body>
+    <!-- Marquee Bar -->
+    <div class="marquee-bar">
+            <div class="marquee-track">
+            <span class="marquee-item">Custom Frames</span>
+            <span class="marquee-item">Prayer Mats</span>
+            <span class="marquee-item">Qur'ān</span>
+            <span class="marquee-item">Branded Gifts</span>
+            <span class="marquee-item">Mug Cups</span>
+            <span class="marquee-item">Graphics Design</span>
+            <span class="marquee-item">Delivered Anywhere</span>
+            <span class="marquee-item">Custom Frames</span>
+            <span class="marquee-item">Prayer Mats</span>
+            <span class="marquee-item">Qur'ān</span>
+            <span class="marquee-item">Branded Gifts</span>
+            <span class="marquee-item">Mug Cups</span>
+            <span class="marquee-item">Graphics Design</span>
+            <span class="marquee-item">Delivered Anywhere</span>
+        </div>
+    </div>
+
+    <!-- Navigation -->
+    <nav class="nav" id="navbar">
+        <div class="nav-inner">
+            <a href="#" class="logo">Al-HAYAA <span>CREATIVE</span></a>
+            <ul class="nav-links" id="navLinks">
+                <li><a href="#services" class="nav-link">Services</a></li>
+                <li><a href="#products" class="nav-link">Collection</a></li>
+                <li><a href="#occasions" class="nav-link">Occasions</a></li>
+                <li><a href="#why" class="nav-link">Why Us</a></li>
+                <li><a href="#contact" class="nav-link">Contact</a></li>
+            </ul>
+            <a href="https://wa.me/2349071522483" class="nav-cta" target="_blank">Order Now</a>
+            <button class="nav-toggle" id="navToggle" aria-label="Toggle menu">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+        </div>
+    </nav>
+
+    <!-- Hero -->
+    <section class="hero" id="home">
+        <div class="hero-left">
+            <div class="hero-label">Est. 2026 — Abeokuta, Nigeria</div>
+                <h1 class="hero-title">Where <em>Modesty</em><br>Meets <em>Creativity</em></h1>
+            <p class="hero-desc">Beautifully crafted Islamic gifts and custom creations — frames, prayer mats, journals, branded items, and more. Each piece designed with intention, delivered with love.</p>
+            <div class="hero-actions">
+                <a href="#products" class="btn btn-primary">Explore Collection →</a>
+                <a href="https://wa.me/2349071522483" class="btn btn-ghost" target="_blank">💬 Chat on WhatsApp</a>
+            </div>
+            <div class="hero-scroll">
+                <div class="hero-scroll-line"></div>
+                <span>Scroll</span>
+            </div>
+        </div>
+        <div class="hero-right">
+            <div class="hero-grid">
+                <div class="hero-img"><img src="mug-cup.jpeg" alt="Mug & Cup"></div>
+                <div class="hero-img"><img src="graduation-frame.jpeg" alt="Graduation Frame"></div>
+                <div class="hero-img"><img src="gift-items.jpeg" alt="Gift Item"></div>
+                <div class="hero-img"><img src="pen.jpeg" alt="Pen"></div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Services -->
+    <section class="services" id="services">
+        <div class="services-inner">
+            <div class="services-visual reveal">
+                <div class="services-visual-img">
+                    <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='500' height='400'%3E%3Crect fill='%23622B8F' width='500' height='400'/%3E%3Ctext x='50%25' y='50%25' text-anchor='middle' dy='.3em' fill='%23D4AF37' font-size='48'%3E🎨 Services%3C/text%3E%3C/svg%3E" alt="Our Services">
+                    <div class="services-visual-caption">
+                        <h4>Handcrafted with Love</h4>
+                        <p>Every piece tells a story</p>
+                    </div>
+                </div>
+            </div>
+            <div class="services-content">
+                <div class="reveal">
+                    <div class="section-label">What We Do</div>
+                    <h2 class="section-title">Crafted for<br><em>Every Moment</em></h2>
+                    <p class="section-desc">From personalized prayer mats to branded corporate gifts, we bring your vision to life with precision and heart.</p>
+                </div>
+                <ul class="services-list">
+                    <li class="service-item reveal reveal-delay-1">
+                        <span class="service-num">01</span>
+                        <span class="service-name">Custom Frames</span>
+                        <span class="service-arrow">→</span>
+                    </li>
+                    <li class="service-item reveal reveal-delay-1">
+                        <span class="service-num">02</span>
+                        <span class="service-name">Customized Prayer Mats</span>
+                        <span class="service-arrow">→</span>
+                    </li>
+                    <li class="service-item reveal reveal-delay-2">
+                        <span class="service-num">03</span>
+                        <span class="service-name">Journals</span>
+                        <span class="service-arrow">→</span>
+                    </li>
+                    <li class="service-item reveal reveal-delay-2">
+                        <span class="service-num">04</span>
+                        <span class="service-name">Branded Pens & Stationery</span>
+                        <span class="service-arrow">→</span>
+                    </li>
+                    <li class="service-item reveal reveal-delay-3">
+                        <span class="service-num">05</span>
+                        <span class="service-name">Custom Mug Cups</span>
+                        <span class="service-arrow">→</span>
+                    </li>
+                    <li class="service-item reveal reveal-delay-3">
+                        <span class="service-num">06</span>
+                        <span class="service-name">Branded Nylon & Packaging</span>
+                        <span class="service-arrow">→</span>
+                    </li>
+                    <li class="service-item reveal reveal-delay-4">
+                        <span class="service-num">07</span>
+                        <span class="service-name">Graphics Design</span>
+                        <span class="service-arrow">→</span>
+                    </li>
+                    <li class="service-item reveal reveal-delay-4">
+                        <span class="service-num">08</span>
+                        <span class="service-name">Gift Items & Sets</span>
+                        <span class="service-arrow">→</span>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    <!-- Products -->
+    <section class="products" id="products">
+        <div class="products-inner">
+            <div class="products-header reveal">
+                <div class="section-label">The Collection</div>
+                <h2 class="section-title">Curated <em>With Care</em></h2>
+                <p class="section-desc">Tap any piece to order directly via WhatsApp. Sizes and pricing vary by product — especially frames and prayer mats.</p>
+            </div>
+            <div class="products-grid">
+                <!-- Product 1 - Tall -->
+                <div class="product-card tall reveal" onclick="orderProduct('Custom Islamic Frame')">
+                    <div class="product-img">
+                        <img src="nikkah-frame.jpeg" alt="Custom Islamic Frame">
+                        <span class="product-tag">Bestseller</span>
+                        <div class="product-overlay">
+                            <h4>Custom Islamic Frame</h4>
+                            <p>Personalized frames with Islamic art, quotes, and names</p>
+                            <a href="https://wa.me/2349071522483?text=Assalamu%20Alaykum!%20I%20want%20to%20order%20Custom%20Islamic%20Frame." class="order-link" target="_blank" onclick="event.stopPropagation()">Order Now →</a>
+                        </div>
+                    </div>
+                    <div class="product-info">
+                        <h4>Custom Islamic Frame</h4>
+                        <p>Beautifully designed frame with Islamic art or personalized text. Size-based pricing starts at 8x10 ₦7k, 10x12 ₦9k, 12x16 ₦13k, and 16x20 ₦17k.</p>
+                        <div class="product-bottom">
+                            <span class="product-price">Contact for price</span>
+                            <a href="https://wa.me/2349071522483?text=Assalamu%20Alaykum!%20I%20want%20to%20order%20Custom%20Islamic%20Frame." class="product-whatsapp" target="_blank" onclick="event.stopPropagation()">💬 Order</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Product 2 -->
+                <div class="product-card reveal reveal-delay-1" onclick="orderProduct('Customized Prayer Mat')">
+                    <div class="product-img">
+                        <img src="prayer-mat.jpeg" alt="Customized Prayer Mat">
+                        <span class="product-tag">Popular</span>
+                        <div class="product-overlay">
+                            <h4>Customized Prayer Mat</h4>
+                            <p>Soft, durable mats with personalized names and designs</p>
+                            <a href="https://wa.me/2349071522483?text=Assalamu%20Alaykum!%20I%20want%20to%20order%20Customized%20Prayer%20Mat." class="order-link" target="_blank" onclick="event.stopPropagation()">Order Now →</a>
+                        </div>
+                    </div>
+                    <div class="product-info">
+                        <h4>Customized Prayer Mat</h4>
+                        <p>Personalized prayer mat with name or special design. Available in multiple sizes, with price depending on the size and design.</p>
+                        <div class="product-bottom">
+                            <span class="product-price">Contact for price</span>
+                            <a href="https://wa.me/2349071522483?text=Assalamu%20Alaykum!%20I%20want%20to%20order%20Customized%20Prayer%20Mat." class="product-whatsapp" target="_blank" onclick="event.stopPropagation()">💬 Order</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Product 3 -->
+                <div class="product-card reveal reveal-delay-2" onclick="orderProduct('Journal')">
+                    <div class="product-img">
+                        <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='400' height='300'%3E%3Crect fill='%234C2172' width='400' height='300'/%3E%3Ctext x='50%25' y='50%25' text-anchor='middle' dy='.3em' fill='%23D4AF37' font-size='20'%3EJournal%3C/text%3E%3C/svg%3E" alt="Journal">
+                        <div class="product-overlay">
+                            <h4>Journal</h4>
+                            <p>Elegant journals for reflection and note-taking</p>
+                            <a href="https://wa.me/2349071522483?text=Assalamu%20Alaykum!%20I%20want%20to%20order%20Journal." class="order-link" target="_blank" onclick="event.stopPropagation()">Order Now →</a>
+                        </div>
+                    </div>
+                    <div class="product-info">
+                        <h4>Journal</h4>
+                        <p>Beautifully bound journal for reflection and note-taking</p>
+                        <div class="product-bottom">
+                            <span class="product-price">Contact for price</span>
+                            <a href="https://wa.me/2349071522483?text=Assalamu%20Alaykum!%20I%20want%20to%20order%20Journal." class="product-whatsapp" target="_blank" onclick="event.stopPropagation()">💬 Order</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Product 4 -->
+                <div class="product-card reveal" onclick="orderProduct('Branded Pen')">
+                    <div class="product-img">
+                        <img src="pen.jpeg" alt="Branded Pen">
+                        <div class="product-overlay">
+                            <h4>Branded Pen</h4>
+                            <p>Sleek pens customized with names or logos</p>
+                            <a href="https://wa.me/2349071522483?text=Assalamu%20Alaykum!%20I%20want%20to%20order%20Branded%20Pen." class="order-link" target="_blank" onclick="event.stopPropagation()">Order Now →</a>
+                        </div>
+                    </div>
+                    <div class="product-info">
+                        <h4>Branded Pen</h4>
+                        <p>Elegant pen customized with name or logo</p>
+                        <div class="product-bottom">
+                            <span class="product-price">Contact for price</span>
+                            <a href="https://wa.me/2349071522483?text=Assalamu%20Alaykum!%20I%20want%20to%20order%20Branded%20Pen." class="product-whatsapp" target="_blank" onclick="event.stopPropagation()">💬 Order</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Product 5 - Tall -->
+                <div class="product-card tall reveal reveal-delay-1" onclick="orderProduct('Custom Mug Cup')">
+                    <div class="product-img">
+                        <img src="mug-cup.jpeg" alt="Custom Mug Cup">
+                        <span class="product-tag">New</span>
+                        <div class="product-overlay">
+                            <h4>Custom Mug Cup</h4>
+                            <p>Personalized mugs with quotes, names, or designs</p>
+                            <a href="https://wa.me/2349071522483?text=Assalamu%20Alaykum!%20I%20want%20to%20order%20Custom%20Mug%20Cup." class="order-link" target="_blank" onclick="event.stopPropagation()">Order Now →</a>
+                        </div>
+                    </div>
+                    <div class="product-info">
+                        <h4>Custom Mug Cup</h4>
+                        <p>Personalized mug with name, quote, or design</p>
+                        <div class="product-bottom">
+                            <span class="product-price">Contact for price</span>
+                            <a href="https://wa.me/2349071522483?text=Assalamu%20Alaykum!%20I%20want%20to%20order%20Custom%20Mug%20Cup." class="product-whatsapp" target="_blank" onclick="event.stopPropagation()">💬 Order</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Product 6 -->
+                <div class="product-card reveal reveal-delay-2" onclick="orderProduct('Branded Nylon')">
+                    <div class="product-img">
+                        <img src="branded-nylon.jpeg" alt="Branded Nylon">
+                        <div class="product-overlay">
+                            <h4>Branded Nylon</h4>
+                            <p>Custom packaging nylon for businesses and events</p>
+                            <a href="https://wa.me/2349071522483?text=Assalamu%20Alaykum!%20I%20want%20to%20order%20Branded%20Nylon." class="order-link" target="_blank" onclick="event.stopPropagation()">Order Now →</a>
+                        </div>
+                    </div>
+                    <div class="product-info">
+                        <h4>Branded Nylon</h4>
+                        <p>Custom-branded packaging nylon for your business</p>
+                        <div class="product-bottom">
+                            <span class="product-price">Contact for price</span>
+                            <a href="https://wa.me/2349071522483?text=Assalamu%20Alaykum!%20I%20want%20to%20order%20Branded%20Nylon." class="product-whatsapp" target="_blank" onclick="event.stopPropagation()">💬 Order</a>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Product 7 -->
+                <div class="product-card reveal reveal-delay-1" onclick="orderProduct('Islamic Wall Art Print')">
+                    <div class="product-img">
+                        <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='400' height='300'%3E%3Crect fill='%234C2172' width='400' height='300'/%3E%3Ctext x='50%25' y='50%25' text-anchor='middle' dy='.3em' fill='%23D4AF37' font-size='20'%3EWall%20Art%3C/text%3E%3C/svg%3E" alt="Islamic Wall Art Print">
+                        <div class="product-overlay">
+                            <h4>Islamic Wall Art Print</h4>
+                            <p>Premium calligraphy art for wall display.</p>
+                            <a href="https://wa.me/2349071522483?text=Assalamu%20Alaykum!%20I%20want%20to%20order%20Islamic%20Wall%20Art%20Print." class="order-link" target="_blank" onclick="event.stopPropagation()">Order Now →</a>
+                        </div>
+                    </div>
+                    <div class="product-info">
+                        <h4>Islamic Wall Art Print</h4>
+                        <p>Decorative art with names, verses, or custom designs.</p>
+                        <div class="product-bottom">
+                            <span class="product-price">Contact for price</span>
+                            <a href="https://wa.me/2349071522483?text=Assalamu%20Alaykum!%20I%20want%20to%20order%20Islamic%20Wall%20Art%20Print." class="product-whatsapp" target="_blank" onclick="event.stopPropagation()">💬 Order</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Product 8 -->
+                <div class="product-card reveal reveal-delay-2" onclick="orderProduct('Personalized Name Plaque')">
+                    <div class="product-img">
+                        <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='400' height='300'%3E%3Crect fill='%234C2172' width='400' height='300'/%3E%3Ctext x='50%25' y='50%25' text-anchor='middle' dy='.3em' fill='%23D4AF37' font-size='20'%3EName%20Plaque%3C/text%3E%3C/svg%3E" alt="Personalized Name Plaque">
+                        <div class="product-overlay">
+                            <h4>Personalized Name Plaque</h4>
+                            <p>Custom name plaque for home or office.</p>
+                            <a href="https://wa.me/2349071522483?text=Assalamu%20Alaykum!%20I%20want%20to%20order%20Personalized%20Name%20Plaque." class="order-link" target="_blank" onclick="event.stopPropagation()">Order Now →</a>
+                        </div>
+                    </div>
+                    <div class="product-info">
+                        <h4>Personalized Name Plaque</h4>
+                        <p>Elegant plaque personalized with name, verse, or message.</p>
+                        <div class="product-bottom">
+                            <span class="product-price">Contact for price</span>
+                            <a href="https://wa.me/2349071522483?text=Assalamu%20Alaykum!%20I%20want%20to%20order%20Personalized%20Name%20Plaque." class="product-whatsapp" target="_blank" onclick="event.stopPropagation()">💬 Order</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Product 9 -->
+                <div class="product-card reveal" onclick="orderProduct('Gift Box Set')">
+                    <div class="product-img">
+                        <img src="gift-items.jpeg" alt="Gift Box Set">
+                        <div class="product-overlay">
+                            <h4>Gift Box Set</h4>
+                            <p>Luxury set with curated personalized items.</p>
+                            <a href="https://wa.me/2349071522483?text=Assalamu%20Alaykum!%20I%20want%20to%20order%20Gift%20Box%20Set." class="order-link" target="_blank" onclick="event.stopPropagation()">Order Now →</a>
+                        </div>
+                    </div>
+                    <div class="product-info">
+                        <h4>Gift Box Set</h4>
+                        <p>Beautifully arranged gift set with custom items for any occasion.</p>
+                        <div class="product-bottom">
+                            <span class="product-price">Contact for price</span>
+                            <a href="https://wa.me/2349071522483?text=Assalamu%20Alaykum!%20I%20want%20to%20order%20Gift%20Box%20Set." class="product-whatsapp" target="_blank" onclick="event.stopPropagation()">💬 Order</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Product 10 -->
+                <div class="product-card reveal reveal-delay-1" onclick="orderProduct('Custom Notebook Set')">
+                    <div class="product-img">
+                        <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='400' height='300'%3E%3Crect fill='%234C2172' width='400' height='300'/%3E%3Ctext x='50%25' y='50%25' text-anchor='middle' dy='.3em' fill='%23D4AF37' font-size='20'%3ENotebook%20Set%3C/text%3E%3C/svg%3E" alt="Custom Notebook Set">
+                        <div class="product-overlay">
+                            <h4>Custom Notebook Set</h4>
+                            <p>Personalized notebooks for study and work.</p>
+                            <a href="https://wa.me/2349071522483?text=Assalamu%20Alaykum!%20I%20want%20to%20order%20Custom%20Notebook%20Set." class="order-link" target="_blank" onclick="event.stopPropagation()">Order Now →</a>
+                        </div>
+                    </div>
+                    <div class="product-info">
+                        <h4>Custom Notebook Set</h4>
+                        <p>Custom notebook set with names, verses or branding.</p>
+                        <div class="product-bottom">
+                            <span class="product-price">Contact for price</span>
+                            <a href="https://wa.me/2349071522483?text=Assalamu%20Alaykum!%20I%20want%20to%20order%20Custom%20Notebook%20Set." class="product-whatsapp" target="_blank" onclick="event.stopPropagation()">💬 Order</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Product 11 -->
+                <div class="product-card reveal reveal-delay-2" onclick="orderProduct('Engraved Keychain')">
+                    <div class="product-img">
+                        <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='400' height='300'%3E%3Crect fill='%234C2172' width='400' height='300'/%3E%3Ctext x='50%25' y='50%25' text-anchor='middle' dy='.3em' fill='%23D4AF37' font-size='20'%3EKeychain%3C/text%3E%3C/svg%3E" alt="Engraved Keychain">
+                        <div class="product-overlay">
+                            <h4>Engraved Keychain</h4>
+                            <p>Custom keychain with name or verse engraving.</p>
+                            <a href="https://wa.me/2349071522483?text=Assalamu%20Alaykum!%20I%20want%20to%20order%20Engraved%20Keychain." class="order-link" target="_blank" onclick="event.stopPropagation()">Order Now →</a>
+                        </div>
+                    </div>
+                    <div class="product-info">
+                        <h4>Engraved Keychain</h4>
+                        <p>Personalized metal keychain with names or special wording.</p>
+                        <div class="product-bottom">
+                            <span class="product-price">Contact for price</span>
+                            <a href="https://wa.me/2349071522483?text=Assalamu%20Alaykum!%20I%20want%20to%20order%20Engraved%20Keychain." class="product-whatsapp" target="_blank" onclick="event.stopPropagation()">💬 Order</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Product 12 -->
+                <div class="product-card reveal" onclick="orderProduct('Canvas Wall Art')">
+                    <div class="product-img">
+                        <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='400' height='300'%3E%3Crect fill='%234C2172' width='400' height='300'/%3E%3Ctext x='50%25' y='50%25' text-anchor='middle' dy='.3em' fill='%23D4AF37' font-size='20'%3ECanvas%3C/text%3E%3C/svg%3E" alt="Canvas Wall Art">
+                        <div class="product-overlay">
+                            <h4>Canvas Wall Art</h4>
+                            <p>Custom canvas with Islamic design and personalization.</p>
+                            <a href="https://wa.me/2349071522483?text=Assalamu%20Alaykum!%20I%20want%20to%20order%20Canvas%20Wall%20Art." class="order-link" target="_blank" onclick="event.stopPropagation()">Order Now →</a>
+                        </div>
+                    </div>
+                    <div class="product-info">
+                        <h4>Canvas Wall Art</h4>
+                        <p>Premium canvas print with personalised Islamic motifs.</p>
+                        <div class="product-bottom">
+                            <span class="product-price">Contact for price</span>
+                            <a href="https://wa.me/2349071522483?text=Assalamu%20Alaykum!%20I%20want%20to%20order%20Canvas%20Wall%20Art." class="product-whatsapp" target="_blank" onclick="event.stopPropagation()">💬 Order</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Product 13 -->
+                <div class="product-card reveal reveal-delay-1" onclick="orderProduct('Custom Bookmark')">
+                    <div class="product-img">
+                        <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='400' height='300'%3E%3Crect fill='%234C2172' width='400' height='300'/%3E%3Ctext x='50%25' y='50%25' text-anchor='middle' dy='.3em' fill='%23D4AF37' font-size='20'%3EBookmark%3C/text%3E%3C/svg%3E" alt="Custom Bookmark">
+                        <div class="product-overlay">
+                            <h4>Custom Bookmark</h4>
+                            <p>Personalized bookmark for readers and students.</p>
+                            <a href="https://wa.me/2349071522483?text=Assalamu%20Alaykum!%20I%20want%20to%20order%20Custom%20Bookmark." class="order-link" target="_blank" onclick="event.stopPropagation()">Order Now →</a>
+                        </div>
+                    </div>
+                    <div class="product-info">
+                        <h4>Custom Bookmark</h4>
+                        <p>Personalized bookmark with names, verses, or quotes.</p>
+                        <div class="product-bottom">
+                            <span class="product-price">Contact for price</span>
+                            <a href="https://wa.me/2349071522483?text=Assalamu%20Alaykum!%20I%20want%20to%20order%20Custom%20Bookmark." class="product-whatsapp" target="_blank" onclick="event.stopPropagation()">💬 Order</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Occasions -->
+    <section class="occasions" id="occasions">
+        <div class="occasions-inner">
+            <div class="occasions-header reveal">
+                <div class="section-label">For Every Moment</div>
+                <h2 class="section-title">Special <em>Occasions</em></h2>
+                <p class="section-desc">Gifts and creations tailored for life's most meaningful milestones.</p>
+            </div>
+            <div class="occasions-scroll">
+                <div class="occasion-card reveal">
+                    <div class="occasion-icon">🕌</div>
+                    <h3>Aqeeqah</h3>
+                    <p>Beautiful gifts and materials to celebrate and strengthen faith. Customized for your gathering.</p>
+                </div>
+                <div class="occasion-card reveal reveal-delay-1">
+                    <div class="occasion-icon">💍</div>
+                    <h3>Nikaah</h3>
+                    <p>Elegant frames, journals, and gift sets for the blessed union. Personalized for the couple.</p>
+                </div>
+                <div class="occasion-card reveal reveal-delay-2">
+                    <div class="occasion-icon">🎓</div>
+                    <h3>Convocation</h3>
+                    <p>Celebrate achievement with custom frames, pens, and gift items that mark the milestone.</p>
+                </div>
+                <div class="occasion-card reveal reveal-delay-4">
+                    <div class="occasion-icon">🌙</div>
+                    <h3>Eid & Ramadan</h3>
+                    <p>Special collections for the holy month and celebration. Gift sets, decor, and more.</p>
+                </div>
+                <div class="occasion-card reveal">
+                    <div class="occasion-icon">🏢</div>
+                    <h3>Corporate Events</h3>
+                    <p>Branded gifts, pens, nylon, and stationery for your business events and client appreciation.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Why Us -->
+    <section class="why" id="why">
+        <div class="why-inner">
+            <div class="why-header reveal">
+                <div class="section-label">Why Al-HAYAA</div>
+                <h2 class="section-title">Built on <em>Principles</em></h2>
+            </div>
+            <div class="why-cards">
+                <div class="why-card reveal">
+                    <div class="why-num">01</div>
+                    <div>
+                        <h4>Premium Quality</h4>
+                        <p>Every piece is crafted with attention to detail using the finest materials for lasting beauty.</p>
+                    </div>
+                </div>
+                <div class="why-card reveal reveal-delay-1">
+                    <div class="why-num">02</div>
+                    <div>
+                        <h4>Fully Customizable</h4>
+                        <p>Your vision, our craft. Every product can be personalized to match your unique style and needs.</p>
+                    </div>
+                </div>
+                <div class="why-card reveal reveal-delay-2">
+                    <div class="why-num">03</div>
+                    <div>
+                        <h4>Delivered Anywhere</h4>
+                        <p>No matter where you are, we ensure your order reaches you safely and on time, nationwide.</p>
+                    </div>
+                </div>
+                <div class="why-card reveal reveal-delay-3">
+                    <div class="why-num">04</div>
+                    <div>
+                        <h4>Made with Love</h4>
+                        <p>Every creation is infused with care, faith, and the intention to bring joy to you and your loved ones.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact -->
+    <section class="contact" id="contact">
+        <div class="contact-inner">
+            <div class="reveal">
+                <div class="section-label">Get in Touch</div>
+                <h2 class="section-title">Let's Create <em>Something</em><br>Beautiful</h2>
+                <p class="section-desc">Have a custom order or ready to place yours? Reach out anytime on WhatsApp.</p>
+            </div>
+            <div class="contact-grid">
+                <div class="contact-card reveal">
+                    <div class="contact-icon">📱</div>
+                    <strong>WhatsApp</strong>
+                    <span>+234 907 152 2483</span>
+                </div>
+                <div class="contact-card reveal reveal-delay-1">
+                    <div class="contact-icon">📍</div>
+                    <strong>Location</strong>
+                    <span>Nigeria — Delivered Anywhere</span>
+                </div>
+                <div class="contact-card reveal reveal-delay-2">
+                    <div class="contact-icon">⚡</div>
+                    <strong>Response</strong>
+                    <span>Usually within minutes</span>
+                </div>
+            </div>
+            <div class="contact-cta reveal">
+                <a href="https://wa.me/2349071522483?text=Assalamu%20Alaykum!%20I%20visited%20your%20website%20and%20I%27m%20interested%20in%20your%20products." class="btn btn-primary" target="_blank">💬 Chat on WhatsApp</a>
+            </div>
+        </div>
+    </section>
+
+
+<div class="haya-presence" id="hayaPresence">
+    <div class="haya-avatar-ring">
+        <span class="moon">🌙</span>
+        <span class="haya-status-dot"></span>
+    </div>
+    <div class="haya-presence-text">Ask HAYA anything</div>
+</div>
+
+<!-- HAYA Toast Container -->
+<div class="haya-toast-container" id="hayaToastContainer"></div>
+
+<!-- HAYA Full Overlay -->
+<div class="haya-overlay" id="hayaOverlay">
+    <div class="haya-overlay-inner">
+        <div class="haya-overlay-header">
+            <div class="haya-overlay-brand">
+                <span class="moon">🌙</span>
+                <div>
+                    <h3>HAYA</h3>
+                    <span>Your Personal Gift Concierge</span>
+                </div>
+            </div>
+            <button class="haya-overlay-close" id="hayaOverlayClose">✕</button>
+        </div>
+        <div class="haya-messages" id="hayaMessages"></div>
+        <div class="haya-input-area">
+            <input type="text" class="haya-input" id="hayaInput" placeholder="Type your message..." autocomplete="off">
+            <button class="haya-send" id="hayaSend">➤</button>
+        </div>
+    </div>
+</div>
+
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="footer-brand">Al-HAYAA CREATIVE</div>
+        <p>Islamic Gifts & Custom Creations — Delivered with Love, Anywhere.</p>
+        <p class="footer-copy">© 2026 Al-HAYAA CREATIVE. All rights reserved.</p>
+    </footer>
+
+    <script>
+        // Navbar scroll effect
+        const navbar = document.getElementById('navbar');
+        window.addEventListener('scroll', () => {
+            navbar.classList.toggle('scrolled', window.scrollY > 50);
+        });
+
+        // Mobile menu toggle
+        const navToggle = document.getElementById('navToggle');
+        const navLinks = document.getElementById('navLinks');
+
+        navToggle.addEventListener('click', () => {
+            navToggle.classList.toggle('active');
+            navLinks.classList.toggle('active');
+        });
+
+        // Close mobile menu on link click
+        document.querySelectorAll('.nav-link').forEach(link => {
+            link.addEventListener('click', () => {
+                navToggle.classList.remove('active');
+                navLinks.classList.remove('active');
+            });
+        });
+
+        // Scroll reveal
+        const revealObserver = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible');
+                }
+            });
+        }, {
+            threshold: 0.1,
+            rootMargin: '0px 0px -60px 0px'
+        });
+
+        document.querySelectorAll('.reveal').forEach(el => revealObserver.observe(el));
+
+        // Order function
+        function orderProduct(productName) {
+            const msg = `Assalamu Alaykum! I want to order ${productName}.`;
+            window.open(`https://wa.me/2349071522483?text=${encodeURIComponent(msg)}`, '_blank');
+        }
+    </script>
+
+<script>
+(function() {
+    'use strict';
+
+    // ═══════════════════════════════════════════════════════════════
+    // HAYA CONFIGURATION
+    // ═══════════════════════════════════════════════════════════════
+    const HAYA_CONFIG = {
+        whatsappNumber: '2349071522483',
+        brandName: 'Al-HAYAA CREATIVE',
+        ownerName: 'HAYA',
+        greetingDelay: 4000,
+        toastDuration: 8000,
+        hoverThreshold: 2000,
+        scrollThreshold: 0.5,
+        exitIntentDelay: 2000,
+        sessionTimeout: 30 * 60 * 1000, // 30 minutes
+    };
+
+    // ═══════════════════════════════════════════════════════════════
+    // HAYA KNOWLEDGE BASE
+    // ═══════════════════════════════════════════════════════════════
+    const HAYA_KNOWLEDGE = {
+        products: {
+            'custom frame': {
+                name: 'Custom Islamic Frame',
+                description: 'Beautifully designed frame with Islamic art, quotes, or personalized names.',
+                occasions: ['aqeeqah', 'nikaah', 'convocation', 'eid'],
+                popular: true,
+            },
+            'prayer mat': {
+                name: 'Customized Prayer Mat',
+                description: 'Soft, durable prayer mat personalized with name or special design.',
+                occasions: ['nikaah', 'aqeeqah', 'eid', 'ramadan'],
+                popular: true,
+            },
+            'journal': {
+                name: 'Journal',
+                description: 'Elegant journal for reflection and note-taking.',
+                occasions: ['aqeeqah', 'nikaah', 'convocation', 'ramadan'],
+                popular: false,
+            },
+            'branded pen': {
+                name: 'Branded Pen',
+                description: 'Sleek pen customized with name or logo.',
+                occasions: ['corporate', 'convocation'],
+                popular: false,
+            },
+            'mug cup': {
+                name: 'Custom Mug Cup',
+                description: 'Personalized mug with quote, name, or design.',
+                occasions: ['eid', 'nikaah', 'corporate'],
+                popular: true,
+            },
+            'branded nylon': {
+                name: 'Branded Nylon',
+                description: 'Custom packaging nylon for businesses and events.',
+                occasions: ['corporate', 'aqeeqah', 'nikaah'],
+                popular: false,
+            },
+        },
+        occasions: {
+            'aqeeqah': {
+                greeting: 'MashaAllah, an Aqeeqah gathering! 🕌',
+                recommendations: ['custom frame', 'prayer mat', 'journal'],
+                message: "For Aqeeqah events, our Custom Islamic Frames with beautiful calligraphy are always appreciated. Would you like me to show you some options?",
+            },
+            'nikaah': {
+                greeting: 'MashaAllah, a Nikaah! 💍 Barakallahu lakuma!',
+                recommendations: ['custom frame', 'prayer mat', 'mug cup'],
+                message: "For Nikaah gifts, couples love our matching Custom Frame and Prayer Mat sets. I can help you personalize them with the couple's names and wedding date.",
+            },
+            'convocation': {
+                greeting: 'MashaAllah, a convocation! 🎓',
+                recommendations: ['custom frame', 'branded pen', 'journal'],
+                message: "Convocation is such a proud moment! Our Custom Frame with an inspirational quote makes a meaningful gift. Or perhaps a branded pen set for their next chapter?"
+            },
+            'eid': {
+                greeting: 'Eid Mubarak in advance! 🌙',
+                recommendations: ['custom frame', 'mug cup', 'prayer mat'],
+                message: 'Eid gifts should be as special as the day itself. Our Custom Frames with "Eid Mubarak" and family names are very popular. Shall I show you?',
+            },
+            'ramadan': {
+                greeting: 'Ramadan Kareem! 🌙',
+                recommendations: ['journal', 'prayer mat', 'custom frame'],
+                message: 'Ramadan is the perfect time for a journal to track your reflections. Or a new Prayer Mat for those long nights of Qiyam.',
+            },
+            'corporate': {
+                greeting: 'Looking for corporate gifts? 🏢',
+                recommendations: ['branded pen', 'branded nylon', 'custom frame'],
+                message: 'For corporate events, our Branded Pens and Custom Nylon packaging create a professional impression. We can match your brand colors too.',
+            },
+        },
+        responses: {
+            'price': "Our prices vary by size and customization. Custom Frames start at 8x10 ₦7,000, 10x12 ₦9,000, 12x16 ₦13,000 and 16x20 ₦17,000. Prayer Mats also come in different sizes — price depends on the size and finish. For an exact quote, I'll connect you directly with the team on WhatsApp.",
+            'delivery': "We deliver anywhere in Nigeria! 🚚 Delivery typically takes 3-7 business days depending on your location. For urgent orders, let us know and we'll do our best to accommodate.",
+            'customization': "Absolutely! Everything we make can be customized — names, dates, quotes, colors, and designs. Just tell me what you have in mind and I'll guide you through the options.",
+            'time': "Most orders take 3-5 days to create, plus delivery time. For large or complex custom orders, we recommend 1-2 weeks. Rush orders are possible — just ask!",
+            'payment': "We accept payment via bank transfer or cash on delivery for some locations. For custom orders, a 50% deposit is required to start production.",
+            'hello': "Assalamu Alaykum! 🌙 I'm HAYA, your personal gift concierge at Al-HAYAA CREATIVE. How can I help you today?",
+            'help': "I can help you find the perfect gift, customize an order, check delivery details, or connect you with our team. What are you looking for?",
+        },
+    };
+
+    // ═══════════════════════════════════════════════════════════════
+    // HAYA STATE MANAGEMENT
+    // ═══════════════════════════════════════════════════════════════
+    const HayaState = {
+        session: {
+            startTime: Date.now(),
+            lastActivity: Date.now(),
+            pageViews: 0,
+            productsViewed: [],
+            productsHovered: [],
+            occasionsViewed: [],
+            scrollDepth: 0,
+            messagesExchanged: 0,
+            intent: null,
+            occasion: null,
+            hasOrdered: false,
+            hasExited: false,
+        },
+        memory: {
+            get(key) {
+                try {
+                    const data = localStorage.getItem('haya_' + key);
+                    return data ? JSON.parse(data) : null;
+                } catch { return null; }
+            },
+            set(key, value) {
+                try {
+                    localStorage.setItem('haya_' + key, JSON.stringify(value));
+                } catch {}
+            },
+            getHistory() {
+                return this.get('chatHistory') || [];
+            },
+            addHistory(role, text) {
+                const history = this.getHistory();
+                history.push({ role, text, time: Date.now() });
+                if (history.length > 50) history.shift();
+                this.set('chatHistory', history);
+            },
+            getLastVisit() {
+                return this.get('lastVisit');
+            },
+            setLastVisit() {
+                this.set('lastVisit', Date.now());
+            },
+            getReturning() {
+                const last = this.getLastVisit();
+                if (!last) return false;
+                return (Date.now() - last) < 7 * 24 * 60 * 60 * 1000; // 7 days
+            },
+        },
+    };
+
+    // ═══════════════════════════════════════════════════════════════
+    // HAYA DOM REFERENCES
+    // ═══════════════════════════════════════════════════════════════
+    const HayaDOM = {
+        presence: null,
+        toastContainer: null,
+        overlay: null,
+        messages: null,
+        input: null,
+        send: null,
+        overlayClose: null,
+    };
+
+    // ═══════════════════════════════════════════════════════════════
+    // HAYA UI FUNCTIONS
+    // ═══════════════════════════════════════════════════════════════
+    const HayaUI = {
+        init() {
+            HayaDOM.presence = document.getElementById('hayaPresence');
+            HayaDOM.toastContainer = document.getElementById('hayaToastContainer');
+            HayaDOM.overlay = document.getElementById('hayaOverlay');
+            HayaDOM.messages = document.getElementById('hayaMessages');
+            HayaDOM.input = document.getElementById('hayaInput');
+            HayaDOM.send = document.getElementById('hayaSend');
+            HayaDOM.overlayClose = document.getElementById('hayaOverlayClose');
+
+            this.bindEvents();
+            this.showPresence();
+        },
+
+        bindEvents() {
+            // Presence click opens overlay
+            HayaDOM.presence.addEventListener('click', () => HayaConversation.open());
+
+            // Overlay controls
+            HayaDOM.overlayClose.addEventListener('click', () => HayaConversation.close());
+            HayaDOM.overlay.addEventListener('click', (e) => {
+                if (e.target === HayaDOM.overlay) HayaConversation.close();
+            });
+
+            // Input handling
+            HayaDOM.input.addEventListener('keypress', (e) => {
+                if (e.key === 'Enter') HayaConversation.sendMessage();
+            });
+            HayaDOM.send.addEventListener('click', () => HayaConversation.sendMessage());
+        },
+
+        showPresence() {
+            setTimeout(() => {
+                HayaDOM.presence.classList.add('visible');
+            }, 2000);
+        },
+
+        showToast(html, actions = [], duration = HAYA_CONFIG.toastDuration) {
+            const toast = document.createElement('div');
+            toast.className = 'haya-toast';
+            toast.innerHTML = `
+                <button class="haya-toast-close">×</button>
+                <div class="haya-toast-header">
+                    <span class="moon">🌙</span>
+                    <span>${HAYA_CONFIG.ownerName}</span>
+                </div>
+                <div>${html}</div>
+                ${actions.length ? `
+                    <div class="haya-toast-actions">
+                        ${actions.map(a => `<button class="haya-toast-btn ${a.type}" onclick="${a.onclick}">${a.text}</button>`).join('')}
+                    </div>
+                ` : ''}
+            `;
+
+            HayaDOM.toastContainer.appendChild(toast);
+
+            // Force visible toast styling
+            toast.style.background = '#31125B';
+            toast.style.border = '1px solid rgba(212, 175, 55, 0.35)';
+            toast.style.color = '#ffffff';
+            toast.style.boxShadow = '0 14px 40px rgba(0, 0, 0, 0.35)';
+            toast.style.opacity = '1';
+            toast.style.transform = 'translateX(0)';
+
+            toast.querySelectorAll('.haya-toast-btn').forEach(btn => {
+                btn.style.border = '1px solid rgba(255,255,255,0.12)';
+                btn.style.color = '#ffffff';
+                if (btn.classList.contains('ghost')) {
+                    btn.style.background = 'rgba(255,255,255,0.10)';
+                }
+            });
+
+            // Animate in
+            requestAnimationFrame(() => toast.classList.add('show'));
+
+            // Close button
+            toast.querySelector('.haya-toast-close').addEventListener('click', () => {
+                this.hideToast(toast);
+            });
+
+            // Auto dismiss
+            if (duration > 0) {
+                setTimeout(() => this.hideToast(toast), duration);
+            }
+
+            return toast;
+        },
+
+        hideToast(toast) {
+            toast.classList.add('exit');
+            setTimeout(() => toast.remove(), 500);
+        },
+
+        addMessage(role, html, options = {}) {
+            const msg = document.createElement('div');
+            msg.className = `haya-msg ${role}`;
+            msg.innerHTML = html;
+
+            if (options.chips) {
+                const chipsDiv = document.createElement('div');
+                chipsDiv.className = 'haya-chips';
+                options.chips.forEach(chip => {
+                    const btn = document.createElement('button');
+                    btn.className = 'haya-chip';
+                    btn.textContent = chip.text;
+                    btn.addEventListener('click', () => {
+                        HayaUI.addMessage('user', chip.text);
+                        HayaState.session.messagesExchanged++;
+                        setTimeout(() => {
+                            chip.action();
+                        }, 120);
+                    });
+                    chipsDiv.appendChild(btn);
+                });
+                msg.appendChild(chipsDiv);
+            }
+
+            HayaDOM.messages.appendChild(msg);
+            HayaDOM.messages.scrollTop = HayaDOM.messages.scrollHeight;
+
+            if (role === 'haya') {
+                HayaState.memory.addHistory('haya', html.replace(/<[^>]*>/g, ''));
+            } else {
+                HayaState.memory.addHistory('user', html.replace(/<[^>]*>/g, ''));
+            }
+        },
+
+        showTyping() {
+            const typing = document.createElement('div');
+            typing.className = 'haya-typing';
+            typing.id = 'hayaTyping';
+            typing.innerHTML = '<span></span><span></span><span></span>';
+            HayaDOM.messages.appendChild(typing);
+            HayaDOM.messages.scrollTop = HayaDOM.messages.scrollHeight;
+            return typing;
+        },
+
+        hideTyping() {
+            const typing = document.getElementById('hayaTyping');
+            if (typing) typing.remove();
+        },
+
+        addProductCard(productKey) {
+            const product = HAYA_KNOWLEDGE.products[productKey];
+            if (!product) return;
+
+            const card = document.createElement('div');
+            card.className = 'haya-product-card';
+            card.innerHTML = `
+                <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='60' height='60'%3E%3Crect fill='%235f2a8f' width='60' height='60'/%3E%3Ctext x='50%25' y='50%25' text-anchor='middle' dy='.3em' fill='%23D4AF37' font-size='24'%3E🎁%3C/text%3E%3C/svg%3E" alt="${product.name}">
+                <div class="info">
+                    <h5>${product.name}</h5>
+                    <p>${product.description}</p>
+                </div>
+            `;
+            card.addEventListener('click', () => {
+                HayaConversation.sendProductOrder(productKey);
+            });
+
+            const msg = document.createElement('div');
+            msg.className = 'haya-msg haya';
+            msg.appendChild(card);
+            HayaDOM.messages.appendChild(msg);
+            HayaDOM.messages.scrollTop = HayaDOM.messages.scrollHeight;
+        },
+
+        addHandoff(message, context) {
+            const handoff = document.createElement('div');
+            handoff.className = 'haya-msg haya';
+            handoff.innerHTML = `
+                <p>${message}</p>
+                <div class="haya-handoff">
+                    <p>I'll prepare a message for our team with all the details:</p>
+                    <a href="${HayaConversation.buildWhatsAppLink(context)}" class="wa-btn" target="_blank">
+                        💬 Continue on WhatsApp
+                    </a>
+                </div>
+            `;
+            HayaDOM.messages.appendChild(handoff);
+            HayaDOM.messages.scrollTop = HayaDOM.messages.scrollHeight;
+        },
+    };
+
+
+    // ═══════════════════════════════════════════════════════════════
+    // HAYA CONVERSATION ENGINE
+    // ═══════════════════════════════════════════════════════════════
+    const HayaConversation = {
+        isOpen: false,
+        currentFlow: null,
+        flowStep: 0,
+
+        open() {
+            if (this.isOpen) return;
+            this.isOpen = true;
+            HayaDOM.overlay.classList.add('open');
+            document.body.style.overflow = 'hidden';
+
+            // First open — start conversation
+            if (HayaState.session.messagesExchanged === 0) {
+                this.startConversation();
+            }
+        },
+
+        close() {
+            this.isOpen = false;
+            HayaDOM.overlay.classList.remove('open');
+            document.body.style.overflow = '';
+        },
+
+        startConversation() {
+            const isReturning = HayaState.memory.getReturning();
+            const lastVisit = HayaState.memory.getLastVisit();
+            const history = HayaState.memory.getHistory();
+            const lastProducts = HayaState.memory.get('lastProductsViewed') || [];
+
+            let greeting = '';
+
+            if (isReturning && lastProducts.length > 0) {
+                greeting = `Assalamu Alaykum! Welcome back! 🌙 I noticed you were looking at our <strong>${lastProducts[0]}</strong> last time. Did you decide, or can I help you with something else?`;
+            } else if (isReturning) {
+                greeting = `Assalamu Alaykum! Welcome back to Al-HAYAA CREATIVE! 🌙 What can I help you find today?`;
+            } else {
+                greeting = `Assalamu Alaykum! 🌙 I'm <strong>HAYA</strong>, your personal gift concierge at Al-HAYAA CREATIVE. I can help you find the perfect gift, customize an order, or answer any questions. What brings you here today?`;
+            }
+
+            this.showHayaMessage(greeting, {
+                chips: [
+                    { text: 'I need a gift', action: () => this.startFlow('gift') },
+                    { text: 'Custom order', action: () => this.startFlow('custom') },
+                    { text: 'Check pricing', action: () => this.handlePricing() },
+                    { text: 'Just browsing', action: () => this.handleBrowsing() },
+                ]
+            });
+
+            HayaState.memory.setLastVisit();
+        },
+
+        startFlow(flowName) {
+            this.currentFlow = flowName;
+            this.flowStep = 0;
+
+            if (flowName === 'gift') {
+                this.showHayaMessage("I'd love to help you find the perfect gift! What's the occasion?", {
+                    chips: [
+                        { text: 'Nikaah 💍', action: () => this.handleOccasion('nikaah') },
+                        { text: 'Aqeeqah 🕌', action: () => this.handleOccasion('aqeeqah') },
+                        { text: 'Convocation 🎓', action: () => this.handleOccasion('convocation') },
+                        { text: 'Eid/Ramadan 🌙', action: () => this.handleOccasion('eid') },
+                        { text: 'Corporate 🏢', action: () => this.handleOccasion('corporate') },
+                        { text: 'No occasion', action: () => this.handleNoOccasion() },
+                    ]
+                });
+            } else if (flowName === 'custom') {
+                this.showHayaMessage('Custom orders are our specialty! ✨ What would you like to create? You can describe anything — a frame with a specific verse, a prayer mat with a name, branded items for an event, etc.');
+                this.flowStep = 1;
+            }
+        },
+
+        handleOccasion(occasionKey) {
+            HayaState.session.occasion = occasionKey;
+            const occasion = HAYA_KNOWLEDGE.occasions[occasionKey];
+
+            if (!occasion) {
+                this.showHayaMessage("Tell me more about what you're looking for, and I'll find the perfect match for you!");
+                return;
+            }
+
+            this.showHayaMessage(`${occasion.greeting}<br><br>${occasion.message}`);
+
+            // Show product recommendations
+            setTimeout(() => {
+                this.showHayaMessage('Here are my top recommendations for this occasion:');
+                occasion.recommendations.forEach((rec, i) => {
+                    setTimeout(() => {
+                        HayaUI.addProductCard(rec);
+                    }, (i + 1) * 400);
+                });
+
+                setTimeout(() => {
+                    this.showHayaMessage('Would you like to see more options, or shall we discuss customizing one of these?', {
+                        chips: [
+                            { text: 'Customize one', action: () => this.startFlow('custom') },
+                            { text: 'See more', action: () => this.showMoreProducts(occasionKey) },
+                            { text: 'Talk to team', action: () => this.handoffToWhatsApp() },
+                        ]
+                    });
+                }, occasion.recommendations.length * 400 + 600);
+            }, 500);
+        },
+
+        handleNoOccasion() {
+            this.showHayaMessage('No occasion needed! 😊 Sometimes the best gifts are "just because." What type of item are you drawn to?', {
+                chips: [
+                    { text: 'Frames', action: () => this.showProductDetail('custom frame') },
+                    { text: 'Prayer Mats', action: () => this.showProductDetail('prayer mat') },
+                    { text: 'Mug Cups', action: () => this.showProductDetail('mug cup') },
+                    { text: 'Journals', action: () => this.showProductDetail('journal') },
+                    { text: 'Surprise me!', action: () => this.showPopularProducts() },
+                ]
+            });
+        },
+
+        showProductDetail(productKey) {
+            const product = HAYA_KNOWLEDGE.products[productKey];
+            if (!product) return;
+
+            this.showHayaMessage(`<strong>${product.name}</strong><br>${product.description}<br><br>Would you like to order this, or learn more about customization options?`, {
+                chips: [
+                    { text: 'Order this', action: () => this.sendProductOrder(productKey) },
+                    { text: 'Customize it', action: () => this.startFlow('custom') },
+                    { text: 'See similar', action: () => this.showSimilarProducts(productKey) },
+                ]
+            });
+        },
+
+        showPopularProducts() {
+            const popular = Object.entries(HAYA_KNOWLEDGE.products)
+                .filter(([_, p]) => p.popular)
+                .map(([k, _]) => k);
+
+            this.showHayaMessage('Here are our most loved items:');
+            popular.forEach((rec, i) => {
+                setTimeout(() => HayaUI.addProductCard(rec), (i + 1) * 300);
+            });
+        },
+
+        showMoreProducts(occasionKey) {
+            const occasion = HAYA_KNOWLEDGE.occasions[occasionKey];
+            if (!occasion) return;
+
+            const allProducts = Object.keys(HAYA_KNOWLEDGE.products);
+            const more = allProducts.filter(p => !occasion.recommendations.includes(p));
+
+            this.showHayaMessage('Here are more options that work beautifully for this occasion:');
+            more.slice(0, 3).forEach((rec, i) => {
+                setTimeout(() => HayaUI.addProductCard(rec), (i + 1) * 300);
+            });
+        },
+
+        showSimilarProducts(productKey) {
+            const product = HAYA_KNOWLEDGE.products[productKey];
+            if (!product) return;
+
+            const similar = Object.entries(HAYA_KNOWLEDGE.products)
+                .filter(([k, p]) => k !== productKey && p.occasions.some(o => product.occasions.includes(o)))
+                .map(([k, _]) => k);
+
+            if (similar.length === 0) {
+                this.showHayaMessage('This is quite unique! Let me show you our other popular items:');
+                this.showPopularProducts();
+                return;
+            }
+
+            this.showHayaMessage('Customers who liked this also loved these:');
+            similar.slice(0, 3).forEach((rec, i) => {
+                setTimeout(() => HayaUI.addProductCard(rec), (i + 1) * 300);
+            });
+        },
+
+        handlePricing() {
+            this.showHayaMessage(HAYA_KNOWLEDGE.responses.price);
+            this.showHayaMessage('Would you like me to connect you with our team for a custom quote?', {
+                chips: [
+                    { text: 'Yes, please', action: () => this.handoffToWhatsApp() },
+                    { text: 'Tell me more first', action: () => this.startFlow('gift') },
+                ]
+            });
+        },
+
+        handleBrowsing() {
+            this.showHayaMessage("Take your time! 🌙 I'll be here if you need anything. Feel free to explore our collection, and just tap me if you have questions or want recommendations.");
+        },
+
+        sendProductOrder(productKey) {
+            const product = HAYA_KNOWLEDGE.products[productKey];
+            if (!product) return;
+
+            HayaState.session.hasOrdered = true;
+            HayaState.session.intent = 'order';
+
+            const context = {
+                product: product.name,
+                occasion: HayaState.session.occasion,
+                productsViewed: HayaState.session.productsViewed,
+                messagesExchanged: HayaState.session.messagesExchanged,
+            };
+
+            HayaUI.addHandoff(
+                `Perfect choice! <strong>${product.name}</strong> is a wonderful pick. I've noted your interest and will connect you with our team to finalize the details.`,
+                context
+            );
+        },
+
+        handoffToWhatsApp() {
+            const context = {
+                occasion: HayaState.session.occasion,
+                productsViewed: HayaState.session.productsViewed,
+                productsHovered: HayaState.session.productsHovered,
+                messagesExchanged: HayaState.session.messagesExchanged,
+                intent: HayaState.session.intent || 'general_inquiry',
+            };
+
+            HayaUI.addHandoff(
+                "I'll connect you directly with our team on WhatsApp. They'll have all the context from our conversation, so you won't need to repeat anything!",
+                context
+            );
+        },
+
+        buildWhatsAppLink(context) {
+            let message = `Assalamu Alaykum! I visited the Al-HAYAA CREATIVE website and `;
+
+            if (context.product) {
+                message += `I'm interested in ordering: ${context.product}. `;
+            } else if (context.occasion) {
+                const occasionName = context.occasion.charAt(0).toUpperCase() + context.occasion.slice(1);
+                message += `I'm looking for a ${occasionName} gift. `;
+            } else {
+                message += `I'm interested in your products. `;
+            }
+
+            if (context.productsViewed && context.productsViewed.length > 0) {
+                message += `I viewed: ${context.productsViewed.join(', ')}. `;
+            }
+
+            message += `Can you help me with more details?`;
+
+            return `https://wa.me/${HAYA_CONFIG.whatsappNumber}?text=${encodeURIComponent(message)}`;
+        },
+
+        sendMessage() {
+            const text = HayaDOM.input.value.trim();
+            if (!text) return;
+
+            HayaDOM.input.value = '';
+            HayaUI.addMessage('user', text);
+            HayaState.session.messagesExchanged++;
+
+            // Process user message
+            this.processUserMessage(text);
+        },
+
+        processUserMessage(text) {
+            HayaUI.showTyping();
+
+            const lower = text.toLowerCase();
+            let response = null;
+            let chips = null;
+
+            // Keyword matching
+            if (lower.includes('price') || lower.includes('cost') || lower.includes('how much')) {
+                response = HAYA_KNOWLEDGE.responses.price;
+                chips = [
+                    { text: 'Get custom quote', action: () => this.handoffToWhatsApp() },
+                    { text: 'Browse products', action: () => this.startFlow('gift') },
+                ];
+            } else if (lower.includes('deliver') || lower.includes('shipping') || lower.includes('send')) {
+                response = HAYA_KNOWLEDGE.responses.delivery;
+            } else if (lower.includes('custom') || lower.includes('personalize') || lower.includes('name')) {
+                response = HAYA_KNOWLEDGE.responses.customization;
+                chips = [
+                    { text: 'Start custom order', action: () => this.startFlow('custom') },
+                ];
+            } else if (lower.includes('time') || lower.includes('long') || lower.includes('wait')) {
+                response = HAYA_KNOWLEDGE.responses.time;
+            } else if (lower.includes('pay') || lower.includes('transfer')) {
+                response = HAYA_KNOWLEDGE.responses.payment;
+            } else if (lower.includes('hello') || lower.includes('hi') || lower.includes('salam') || lower.includes('asalam')) {
+                response = HAYA_KNOWLEDGE.responses.hello;
+                chips = [
+                    { text: 'I need a gift', action: () => this.startFlow('gift') },
+                    { text: 'Custom order', action: () => this.startFlow('custom') },
+                    { text: 'Just browsing', action: () => this.handleBrowsing() },
+                ];
+            } else if (lower.includes('help')) {
+                response = HAYA_KNOWLEDGE.responses.help;
+                chips = [
+                    { text: 'Find a gift', action: () => this.startFlow('gift') },
+                    { text: 'Check pricing', action: () => this.handlePricing() },
+                    { text: 'Delivery info', action: () => this.processUserMessage('delivery') },
+                ];
+            } else if (lower.includes('frame')) {
+                this.handleProductMention('custom frame');
+                return;
+            } else if (lower.includes('prayer mat') || lower.includes('mat')) {
+                this.handleProductMention('prayer mat');
+                return;
+            } else if (lower.includes('mug')) {
+                this.handleProductMention('mug cup');
+                return;
+            } else if (lower.includes('journal') || lower.includes('quran')) {
+                this.handleProductMention('journal');
+                return;
+            } else if (lower.includes('pen')) {
+                this.handleProductMention('branded pen');
+                return;
+            } else if (lower.includes('nylon') || lower.includes('packaging')) {
+                this.handleProductMention('branded nylon');
+                return;
+            } else {
+                response = "I'm not sure I understood that perfectly, but I'd love to help! Could you tell me more about what you're looking for? Or choose one of these:";
+                chips = [
+                    { text: 'Find a gift', action: () => this.startFlow('gift') },
+                    { text: 'Custom order', action: () => this.startFlow('custom') },
+                    { text: 'Talk to team', action: () => this.handoffToWhatsApp() },
+                ];
+            }
+
+            setTimeout(() => {
+                HayaUI.hideTyping();
+                this.showHayaMessage(response, chips ? { chips } : undefined);
+            }, 800 + Math.random() * 600);
+        },
+
+        handleProductMention(productKey) {
+            const product = HAYA_KNOWLEDGE.products[productKey];
+            if (!product) return;
+
+            setTimeout(() => {
+                HayaUI.hideTyping();
+                this.showHayaMessage(`Ah, you're interested in our <strong>${product.name}</strong>! ${product.description}`);
+                HayaUI.addProductCard(productKey);
+                this.showHayaMessage('Would you like to place an order or customize this item?', {
+                    chips: [
+                        { text: 'Order now', action: () => this.sendProductOrder(productKey) },
+                        { text: 'Customize', action: () => this.startFlow('custom') },
+                        { text: 'See similar', action: () => this.showSimilarProducts(productKey) },
+                    ]
+                });
+            }, 600);
+        },
+
+        showHayaMessage(html, options) {
+            setTimeout(() => {
+                HayaUI.hideTyping();
+                HayaUI.addMessage('haya', html, options);
+                HayaState.session.messagesExchanged++;
+            }, 300);
+        },
+    };
+
+
+    // ═══════════════════════════════════════════════════════════════
+    // HAYA BEHAVIOR ENGINE
+    // ═══════════════════════════════════════════════════════════════
+    const HayaBehavior = {
+        init() {
+            this.trackScroll();
+            this.trackHover();
+            this.trackClicks();
+            this.trackExitIntent();
+            this.scheduleProactiveMessages();
+        },
+
+        trackScroll() {
+            let maxScroll = 0;
+            let hasTriggered50 = false;
+            let hasTriggered80 = false;
+
+            window.addEventListener('scroll', () => {
+                const scrollPercent = window.scrollY / (document.body.scrollHeight - window.innerHeight);
+                HayaState.session.scrollDepth = Math.max(HayaState.session.scrollDepth, scrollPercent);
+
+                // 50% scroll — user is engaged but hasn't clicked anything
+                if (scrollPercent > 0.5 && !hasTriggered50 && HayaState.session.productsViewed.length === 0) {
+                    hasTriggered50 = true;
+                    setTimeout(() => {
+                        if (!HayaConversation.isOpen) {
+                            HayaProactive.suggestHelp('browse');
+                        }
+                    }, 2000);
+                }
+
+                // 80% scroll — near bottom, show occasion suggestion
+                if (scrollPercent > 0.8 && !hasTriggered80) {
+                    hasTriggered80 = true;
+                    setTimeout(() => {
+                        if (!HayaConversation.isOpen && !HayaState.session.hasOrdered) {
+                            HayaProactive.suggestOccasions();
+                        }
+                    }, 1500);
+                }
+            }, { passive: true });
+        },
+
+        trackHover() {
+            const productCards = document.querySelectorAll('.product-card');
+            let hoverTimers = new Map();
+
+            productCards.forEach(card => {
+                const productName = card.querySelector('h4')?.textContent || '';
+
+                card.addEventListener('mouseenter', () => {
+                    const timer = setTimeout(() => {
+                        HayaState.session.productsHovered.push(productName);
+                        HayaState.memory.set('lastProductsViewed', HayaState.session.productsHovered.slice(-3));
+
+                        // If hovering same product for long time, suggest details
+                        if (!HayaConversation.isOpen && HayaState.session.productsHovered.filter(p => p === productName).length >= 2) {
+                            HayaProactive.suggestProductDetail(productName);
+                        }
+                    }, HAYA_CONFIG.hoverThreshold);
+                    hoverTimers.set(card, timer);
+                });
+
+                card.addEventListener('mouseleave', () => {
+                    if (hoverTimers.has(card)) {
+                        clearTimeout(hoverTimers.get(card));
+                        hoverTimers.delete(card);
+                    }
+                });
+
+                // Track actual clicks
+                card.addEventListener('click', () => {
+                    HayaState.session.productsViewed.push(productName);
+                    HayaState.memory.set('lastProductsViewed', HayaState.session.productsViewed.slice(-3));
+                });
+            });
+
+            // Track occasion card hovers
+            const occasionCards = document.querySelectorAll('.occasion-card');
+            occasionCards.forEach(card => {
+                card.addEventListener('mouseenter', () => {
+                    const occasionName = card.querySelector('h3')?.textContent || '';
+                    HayaState.session.occasionsViewed.push(occasionName);
+                });
+            });
+        },
+
+        trackClicks() {
+            // Track WhatsApp button clicks
+            document.querySelectorAll('a[href*="wa.me"]').forEach(link => {
+                link.addEventListener('click', () => {
+                    HayaState.session.hasOrdered = true;
+                });
+            });
+        },
+
+        trackExitIntent() {
+            let hasExited = false;
+
+            document.addEventListener('mouseleave', (e) => {
+                if (e.clientY < 10 && !hasExited && !HayaState.session.hasOrdered) {
+                    hasExited = true;
+                    HayaState.session.hasExited = true;
+
+                    setTimeout(() => {
+                        if (!HayaConversation.isOpen) {
+                            HayaProactive.exitMessage();
+                        }
+                    }, HAYA_CONFIG.exitIntentDelay);
+                }
+            });
+        },
+
+        scheduleProactiveMessages() {
+            // First visit greeting toast
+            setTimeout(() => {
+                if (!HayaState.memory.getReturning() && !HayaConversation.isOpen) {
+                    HayaProactive.welcomeToast();
+                }
+            }, HAYA_CONFIG.greetingDelay);
+
+            // Idle reminder after 2 minutes
+            setTimeout(() => {
+                if (!HayaConversation.isOpen && !HayaState.session.hasOrdered && HayaState.session.productsViewed.length === 0) {
+                    HayaProactive.idleReminder();
+                }
+            }, 120000);
+        },
+    };
+
+    // ═══════════════════════════════════════════════════════════════
+    // HAYA PROACTIVE MESSAGES
+    // ═══════════════════════════════════════════════════════════════
+    const HayaProactive = {
+        welcomeToast() {
+            const isReturning = HayaState.memory.getReturning();
+            const lastProducts = HayaState.memory.get('lastProductsViewed') || [];
+
+            if (isReturning && lastProducts.length > 0) {
+                HayaUI.showToast(
+                    `Welcome back! 🌙 You were looking at our <strong>${lastProducts[0]}</strong> last time. Need help picking up where you left off?`,
+                    [
+                        { text: 'Yes, please', type: 'primary', onclick: "HayaConversation.open()" },
+                        { text: 'No thanks', type: 'ghost', onclick: "this.parentElement.parentElement.querySelector('.haya-toast-close').click()" },
+                    ]
+                );
+            } else {
+                HayaUI.showToast(
+                    `Assalamu Alaykum! 🌙 I'm HAYA, your personal gift concierge. Looking for something special today?`,
+                    [
+                        { text: 'Find a gift', type: 'primary', onclick: "HayaConversation.startFlow('gift'); HayaConversation.open()" },
+                        { text: 'Just browsing', type: 'ghost', onclick: "this.parentElement.parentElement.querySelector('.haya-toast-close').click()" },
+                    ]
+                );
+            }
+        },
+
+        suggestHelp(type) {
+            if (type === 'browse') {
+                HayaUI.showToast(
+                    `I see you're exploring our collection! 🌙 Can I help you find something specific, or would you like to see our most popular items?`,
+                    [
+                        { text: 'Show popular', type: 'primary', onclick: "HayaConversation.open(); setTimeout(() => HayaConversation.showPopularProducts(), 500)" },
+                        { text: "I'm fine", type: 'ghost', onclick: "this.parentElement.parentElement.querySelector('.haya-toast-close').click()" },
+                    ],
+                    12000
+                );
+            }
+        },
+
+        suggestProductDetail(productName) {
+            const productKey = Object.keys(HAYA_KNOWLEDGE.products).find(
+                k => HAYA_KNOWLEDGE.products[k].name.toLowerCase() === productName.toLowerCase()
+            );
+
+            if (!productKey) return;
+
+            const product = HAYA_KNOWLEDGE.products[productKey];
+
+            HayaUI.showToast(
+                `You've been looking at our <strong>${product.name}</strong>! ✨ ${product.description} Want to learn more?`,
+                [
+                    { text: 'Tell me more', type: 'primary', onclick: `HayaConversation.open(); setTimeout(() => HayaConversation.showProductDetail('${productKey}'), 500)` },
+                    { text: 'Order now', type: 'ghost', onclick: `window.open('https://wa.me/${HAYA_CONFIG.whatsappNumber}?text=${encodeURIComponent(`Assalamu Alaykum! I want to order ${product.name}.`)}', '_blank')` },
+                ],
+                10000
+            );
+        },
+
+        suggestOccasions() {
+            HayaUI.showToast(
+                `Planning for a special occasion? 🌙 We have beautiful collections for Nikaah, Aqeeqah, Eid, and more. Shall I show you?`,
+                [
+                    { text: 'Show occasions', type: 'primary', onclick: "document.getElementById('occasions').scrollIntoView({behavior: 'smooth'})" },
+                    { text: 'No thanks', type: 'ghost', onclick: "this.parentElement.parentElement.querySelector('.haya-toast-close').click()" },
+                ],
+                10000
+            );
+        },
+
+        idleReminder() {
+            HayaUI.showToast(
+                `Still with us? 🌙 If you have any questions about our products, customization, or pricing, I'm here to help!`,
+                [
+                    { text: 'Ask HAYA', type: 'primary', onclick: "HayaConversation.open()" },
+                    { text: 'Dismiss', type: 'ghost', onclick: "this.parentElement.parentElement.querySelector('.haya-toast-close').click()" },
+                ],
+                8000
+            );
+        },
+
+        exitMessage() {
+            const messages = [
+                `Assalamu Alaykum wa rahmatullahi wa barakatuh! 🌙 Before you go — is there something specific you're looking for? I can help you find it.`,
+                `Assalamu Alaikum wa rahmatullahi wa barakatuh! 🌙 I hope you found something beautiful. If you need help later, just come back — I'll remember what you were looking at.`,
+            ];
+
+            const msg = HayaState.session.productsViewed.length > 0 ? messages[1] : messages[0];
+
+            HayaUI.showToast(
+                msg,
+                [
+                    { text: 'Talk to me', type: 'primary', onclick: "HayaConversation.open()" },
+                    { text: 'Close', type: 'ghost', onclick: "this.parentElement.parentElement.querySelector('.haya-toast-close').click()" },
+                ],
+                15000
+            );
+        },
+    };
+
+    // ═══════════════════════════════════════════════════════════════
+    // HAYA INITIALIZATION
+    // ═══════════════════════════════════════════════════════════════
+    function initHAYA() {
+        // Wait for DOM
+        if (document.readyState === 'loading') {
+            document.addEventListener('DOMContentLoaded', initHAYA);
+            return;
+        }
+
+        // Add small delay to ensure all elements are mounted
+        setTimeout(() => {
+            try {
+                const presenceEl = document.getElementById('hayaPresence');
+                const overlayEl = document.getElementById('hayaOverlay');
+                
+                if (!presenceEl || !overlayEl) {
+                    console.warn('🌙 HAYA: DOM elements not found, retrying...');
+                    setTimeout(initHAYA, 500);
+                    return;
+                }
+                
+                HayaUI.init();
+                HayaBehavior.init();
+                console.log('🌙 HAYA is awake and watching...');
+            } catch (error) {
+                console.error('🌙 HAYA initialization error:', error);
+            }
+        }, 100);
+    }
+
+    // Ensure initialization happens
+    if (document.readyState === 'loading') {
+        document.addEventListener('DOMContentLoaded', initHAYA);
+    } else {
+        initHAYA();
+    }
+
+})();
+</script>
+</body>
+</html>
